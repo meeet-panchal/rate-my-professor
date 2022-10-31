@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {Button} from './styleComponents'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         >
           Learn React
         </a>
+      <Button contact>
+        Demo
+      </Button>
       </header>
     </div>
   );
