@@ -1,4 +1,4 @@
-import About from './About';
+import logo from './logo.svg';
 import './App.css';
 import { Button, Paragraph, H1, UL, LI, A, H2, H3, H4 } from './styleComponents'
 import {BsFillBookmarkStarFill,  BsFillStarFill, BsTwitter, BsInstagram, BsLinkedin, BsFillEmojiLaughingFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill, BsFillEmojiAngryFill, BsFillAlarmFill, BsFillEnvelopeFill, BsFillTelephoneFill, BsBuilding, BsFacebook} from "react-icons/bs";
@@ -39,7 +39,7 @@ function App() {
       Students around the world to choose their universities based on their ratings.
        </Paragraph>
 
-       <H1>Top Professors</H1>
+       <H1>About Us</H1>
 <div className="row">
   <div className="column">
     <div className="card">
