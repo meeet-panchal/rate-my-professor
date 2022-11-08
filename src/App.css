@@ -8,7 +8,11 @@
 .header {
   width: 100%;
   min-height: 70vh;
-  background-image: linear-gradient(rgba(44, 41, 41, 0.5), rgba(44, 41, 41, 0.5)), url("/public/images/rate.jpg");
+  background-image: linear-gradient(
+      rgba(44, 41, 41, 0.5),
+      rgba(44, 41, 41, 0.5)
+    ),
+    url("/public/images/rate.jpg");
   background-size: cover;
   position: relative;
   margin-bottom: 20px;
@@ -64,8 +68,8 @@ nav {
 }
 
 .navigation ul li a {
-  background: linear-gradient(90deg,#A9F1DF , #FFBBBB );
- 
+  background: linear-gradient(90deg, #a9f1df, #ffbbbb);
+
   -webkit-background-clip: text;
   /* Make the text fill color value transparent so the masked background color comes through */
   -webkit-text-fill-color: transparent;
@@ -74,7 +78,7 @@ nav {
 }
 
 .navigation ul li::after {
-  content: '';
+  content: "";
   width: 0%;
   height: 2px;
   background: wheat;
@@ -109,7 +113,7 @@ nav {
   color: antiquewhite;
   border: 1px solid #fff;
   padding: 12px 34px;
-  background-color: #588E89;
+  background-color: #588e89;
   position: relative;
   cursor: pointer;
 }
@@ -148,7 +152,7 @@ nav .fa {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  margin:0px;
+  margin: 0px;
   box-sizing: border-box;
 }
 .mySlides {
@@ -167,10 +171,11 @@ img {
   position: relative;
   margin: auto;
   margin-top: 50px;
-
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -200,15 +205,16 @@ img {
   padding: 0 16px;
 }
 
-.container::after, .row::after {
+.container::after,
+.row::after {
   content: "";
   clear: both;
   display: table;
 }
 
 .title {
- color: #588E89;
- font-weight: bold;
+  color: #588e89;
+  font-weight: bold;
 }
 
 .button {
@@ -217,8 +223,8 @@ img {
   display: inline-block;
   padding: 8px;
   color: black;
-background-color: #588E89; 
-background-image: linear-gradient(90deg, #588E89, lightpink);
+  background-color: #588e89;
+  background-image: linear-gradient(90deg, #588e89, lightpink);
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -226,35 +232,35 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
 }
 
 .button:hover {
-  background-color: #588E89; 
+  background-color: #588e89;
 }
-.contact-section{
+.contact-section {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.contact-info{
-  color:black;
+.contact-info {
+  color: black;
   max-width: 500px;
   line-height: 65px;
   padding-left: 50px;
   font-size: 20px;
   margin-bottom: 80px;
-
 }
 
-.contact-form{
+.contact-form {
   margin-top: 20px;
   max-width: 700px;
   margin-right: 50px;
 }
-.contact-info, .contact-form{
-  flex:auto;
+.contact-info,
+.contact-form {
+  flex: auto;
 }
-.contact-form .text-box1{
-  background-color: #588E89; 
-  background-image: linear-gradient(90deg, #588E89, lightpink);
+.contact-form .text-box1 {
+  background-color: #588e89;
+  background-image: linear-gradient(90deg, #588e89, lightpink);
   color: black;
   border: none;
   width: calc(50% - 1px);
@@ -266,12 +272,12 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
   margin-bottom: 20px;
   opacity: 0.9;
 }
-.contact-form .text-box:first-child{
+.contact-form .text-box:first-child {
   margin-right: 0px;
 }
-.contact-form textarea{
-  background-color: #588E89; 
-  background-image: linear-gradient(90deg, #588E89, lightpink);
+.contact-form textarea {
+  background-color: #588e89;
+  background-image: linear-gradient(90deg, #588e89, lightpink);
   color: black;
   border: none;
   width: 100%;
@@ -285,9 +291,9 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
   margin-bottom: 20px;
   opacity: 0.9;
 }
-.contact-form .send-btn{
-  background-color: #588E89; 
-  background-image: linear-gradient(90deg, #588E89, lightpink);
+.contact-form .send-btn {
+  background-color: #588e89;
+  background-image: linear-gradient(90deg, #588e89, lightpink);
   margin-left: 290px;
   color: black;
   border: none;
@@ -302,10 +308,10 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
   transition: 0.3s;
   transition-property: background;
 }
-.contact-form .send-btn:hover{
+.contact-form .send-btn:hover {
   background: red;
 }
-.contact-map{
+.contact-map {
   margin-top: 20px;
 }
 #footer {
@@ -326,14 +332,14 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
   font-size: 14px;
   /*  line-height: 24px;*/
   margin-bottom: 0;
-  
+
   color: #fff;
 }
 
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #588E89;
+  background: #588e89;
   color: #fff;
   line-height: 2;
   padding: 8px 0;
@@ -347,7 +353,7 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #588E89;
+  background: #588e89;
   color: #fff;
   text-decoration: none;
 }
@@ -398,7 +404,7 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
 #footer .footer-top .footer-newsletter form input[type="email"] {
   border: 0;
   padding: 4px;
-  width:50%;
+  width: 50%;
   background: #28251f;
   color: white;
 }
@@ -412,8 +418,8 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
   background: none;
   font-size: 16px;
   padding: 0 20px 2px 20px;
-  background-color: #588E89; 
-  background-image: linear-gradient(90deg, #588E89, lightpink);
+  background-color: #588e89;
+  background-image: linear-gradient(90deg, #588e89, lightpink);
   transition: 0.3s;
   border-radius: 50px;
 }
@@ -441,77 +447,75 @@ background-image: linear-gradient(90deg, #588E89, lightpink);
 
 @media only screen and (max-width: 768px) {
   .text-box h1 {
-      font-size: 20px;
+    font-size: 20px;
   }
   .navigation ul li {
-      display: block;
+    display: block;
   }
   .navigation {
-      position: absolute;
-      background: #f44336;
-      height: 70vh;
-      width: 200px;
-      top: 0;
-      right: 1000px;
-      text-align: left;
-      z-index: 2;
+    position: absolute;
+    background: #f44336;
+    height: 70vh;
+    width: 200px;
+    top: 0;
+    right: 1000px;
+    text-align: left;
+    z-index: 2;
   }
   nav .fa {
-      display: block;
-      color: #fff;
-      margin: 10px;
-      font-size: 22px;
-      cursor: pointer;
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
   }
   nav .fa ul {
-      padding: 25px;
+    padding: 25px;
   }
   .row {
-      display: block;
-      margin-left: 25px;
+    display: block;
+    margin-left: 25px;
   }
-  .address{
-      margin: 0;
+  .address {
+    margin: 0;
   }
-  #footer .footer-top .links{
-      margin-bottom: 30px;
+  #footer .footer-top .links {
+    margin-bottom: 30px;
   }
-  #footer .links h4{
-      margin: 0;
+  #footer .links h4 {
+    margin: 0;
   }
-  #footer .footer-top .footer-newsletter form{
-      margin: 0;
+  #footer .footer-top .footer-newsletter form {
+    margin: 0;
   }
-  #footer .footer-top .social-links a{
-      width: 50px;
-      height: 36px;
+  #footer .footer-top .social-links a {
+    width: 50px;
+    height: 36px;
   }
 }
 
-@media only screen and (max-width: 768px){
- 
-  .contact-section{
-      flex-direction: column;
- }
-  .contact-info{
-      font-size: 12px;
-      font-weight:bold;
- }
-  .contact-info, .contact-form{
-      margin: 30px 50px;
- }
- 
-  .contact-form .text-box{
-      width: 100%;
- }
-  .contact-form .send-btn:hover{
-      background: red;
- }
-  .contact-form .send-btn{
-      margin: auto;
-      display: flex;
-      justify-content: center;
- }
+@media only screen and (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-info {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .contact-info,
+  .contact-form {
+    margin: 30px 50px;
+  }
 
-  
+  .contact-form .text-box {
+    width: 100%;
+  }
+  .contact-form .send-btn:hover {
+    background: red;
+  }
+  .contact-form .send-btn {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
 }
