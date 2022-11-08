@@ -1,17 +1,7 @@
 import Container from "react-bootstrap/Container";
+import registrationApi from "../../api/registrationApi";
 import MainHeader from "../MainHeader";
-import {
-  AutoComplete,
-  Button,
-  Cascader,
-  Checkbox,
-  Col,
-  Form,
-  Input,
-  InputNumber,
-  Row,
-  Select,
-} from "antd";
+import { Button, Col, Form, Input, InputNumber, Row, Select } from "antd";
 import React, { useState } from "react";
 const { Option } = Select;
 
@@ -48,47 +38,35 @@ const tailFormItemLayout = {
 
 const RegisterationForm = () => {
   const [form] = Form.useForm();
-  const onFinish = (values) => {
+
+  const onFinish = async (values) => {
+    const {
+      firstName,
+      email,
+      institution,
+      department,
+      isStudent,
+      lastName,
+      password,
+    } = values;
+
+    const registerationDetails = {
+      firstName: firstName,
+      email: email,
+      institution: institution,
+      department: department,
+      isStudent: isStudent,
+      lastName: lastName,
+      password: password,
+    };
+    const response = await registrationApi.post(
+      "/register",
+      registerationDetails
+    );
     console.log("Received values of form: ", values);
+    console.log("values passed from the form", response);
   };
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
-  const suffixSelector = (
-    <Form.Item name="suffix" noStyle>
-      <Select
-        style={{
-          width: 70,
-        }}
-      >
-        <Option value="USD">$</Option>
-        <Option value="CNY">¥</Option>
-      </Select>
-    </Form.Item>
-  );
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-  const onWebsiteChange = (value) => {
-    if (!value) {
-      setAutoCompleteResult([]);
-    } else {
-      setAutoCompleteResult(
-        [".com", ".org", ".net"].map((domain) => `${value}${domain}`)
-      );
-    }
-  };
-  const websiteOptions = autoCompleteResult.map((website) => ({
-    label: website,
-    value: website,
-  }));
+
   return (
     <>
       <MainHeader></MainHeader>
@@ -105,7 +83,7 @@ const RegisterationForm = () => {
           scrollToFirstError
         >
           <Form.Item
-            name="firstname"
+            name="firstName"
             label="Firstname"
             rules={[
               {
@@ -118,7 +96,7 @@ const RegisterationForm = () => {
           </Form.Item>
 
           <Form.Item
-            name="lastname"
+            name="lastName"
             label="Lastname"
             rules={[
               {
@@ -189,6 +167,32 @@ const RegisterationForm = () => {
           </Form.Item>
 
           <Form.Item
+            name="institution"
+            label="Institution"
+            rules={[
+              {
+                required: true,
+                message: "Please input your Institution!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            name="department"
+            label="Department"
+            rules={[
+              {
+                required: true,
+                message: "Please input your Department!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
             name="isStudent"
             label="Type"
             rules={[
@@ -199,8 +203,8 @@ const RegisterationForm = () => {
             ]}
           >
             <Select placeholder="Select your Type">
-              <Option value="student">Student</Option>
-              <Option value="professor">Professor</Option>
+              <Option value="true">Student</Option>
+              <Option value="false">Professor</Option>
             </Select>
           </Form.Item>
 
