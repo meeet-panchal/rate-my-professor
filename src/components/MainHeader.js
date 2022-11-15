@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const MainHeader = () => {
   return (
     <header>
-      <div class="navigation" id="navigation">
-        <i class="fa fa-times" onclick="hidemenu()"></i>
+      <div className="navigation" id="navigation">
+        {/* <i className="fa fa-times" onClick="hidemenu()"></i> */}
         <ul>
           <li>
             <Link to="/ratings">RATINGS</Link>
@@ -19,7 +19,7 @@ const MainHeader = () => {
             <Link to="/contactus">CONTACT US</Link>
           </li>
           <li>
-            <Link to="/abouts">ABOUT US</Link>
+            <Link to="/about-us">ABOUT US</Link>
           </li>
           <li>
             <Link to="/register">REGISTER</Link>

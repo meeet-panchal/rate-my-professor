@@ -36,9 +36,9 @@ import MainHeader from "../MainHeader";
 const Home = () => {
   return (
     <div className="App">
-      <section class="header">
+      <section className="header">
         <nav>
-          <div class="logo">
+          <div className="logo">
             <a href="index.html">
               <H2>
                 <span id="part1">Rate My</span>
@@ -47,10 +47,10 @@ const Home = () => {
             </a>
           </div>
           <MainHeader></MainHeader>
-          <i class="fa fa-bars" onclick="showmenu()"></i>
+          {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
         </nav>
 
-        <div class="text-box">
+        <div className="text-box">
           <H1>
             <BsFillEmojiLaughingFill></BsFillEmojiLaughingFill>{" "}
             <BsFillEmojiNeutralFill></BsFillEmojiNeutralFill>{" "}
@@ -66,7 +66,7 @@ const Home = () => {
             <br></br>
             Just say thank you to them by providing ratings here.
           </Paragraph>
-          <a href="table.html" class="visit-btn">
+          <a href="table.html" className="visit-btn">
             RATING
           </a>
         </div>
@@ -262,7 +262,7 @@ const Home = () => {
               <input
                 type="submit"
                 name="submit"
-                class="send-btn"
+                className="send-btn"
                 value="Send"
               />
             </form>
@@ -294,8 +294,8 @@ const Home = () => {
                       <BsLinkedin></BsLinkedin>
                     </a>
                   </div>
-                  <div class="links">
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                  <div className="links">
+                    <div className="col-lg-4 col-md-6 footer-newsletter">
                       <h4>Our Newsletter</h4>
 
                       <form action="" method="post">
