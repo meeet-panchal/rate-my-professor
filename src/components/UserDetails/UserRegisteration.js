@@ -111,6 +111,8 @@ const RegisterationForm = () => {
           <Form.Item
             name="email"
             label="E-mail"
+            pattern="/^[a-zA-Z0-9.!#$%&'+\=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/g
+            "
             rules={[
               {
                 type: "email",
@@ -128,6 +130,7 @@ const RegisterationForm = () => {
           <Form.Item
             name="password"
             label="Password"
+            pattern=" /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/g"
             rules={[
               {
                 required: true,
