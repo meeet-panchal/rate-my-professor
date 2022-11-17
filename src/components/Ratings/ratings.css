@@ -1,0 +1,26 @@
+.backgroundCover {
+  /* background-image: url("../../../public/images/background/background-image1.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+}
+
+.bg-image1 {
+  background-image: url("../../../public/images/background/background-image1.jpg");
+}
+
+.bg-image2 {
+  background-image: url("../../../public/images/background/bg-image2.jpg");
+}
+.bg-image3 {
+  background-image: url("../../../public/images/background/bg-image3.jpg");
+}
+.bg-image4 {
+  background-image: url("../../../public/images/background/bg-image4.jpg");
+}
+
+.header-text {
+  text-align: center;
+  font-size: bold;
+}
