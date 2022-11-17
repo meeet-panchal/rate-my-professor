@@ -1,7 +1,7 @@
 import "./App.css";
 import RegisterationForm from "./components/UserDetails/UserRegisteration";
 import Home from "./components/HomePage/home";
-import AboutUs from "./About"
+import AboutUs from "./components/About/About"
 import { Routes, Route } from "react-router-dom";
 
 function App() {
