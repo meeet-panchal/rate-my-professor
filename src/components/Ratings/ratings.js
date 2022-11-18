@@ -46,7 +46,7 @@ const formItemLayout = {
       span: 24,
     },
     sm: {
-      span: 8,
+      span: 10,
     },
   },
 };
@@ -100,19 +100,6 @@ const Ratings = () => {
         }}
       >
         <h2 className="header-text">Rate your Professor!</h2>
-
-        <Form.Item
-          name="Professor name"
-          label="Professor"
-          rules={[
-            {
-              required: true,
-              message: "Please input Professor name!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
 
         <Form.Item
           name="University"
@@ -187,113 +174,113 @@ const Ratings = () => {
           </Radio.Group>
         </Form.Item>
 
+        <Form.Item name="credit" label="Was this class taken for credit?">
+          <Radio.Group>
+            <Radio value="true">Yes</Radio>
+            <Radio value="false">No</Radio>
+          </Radio.Group>
+        </Form.Item>
+
+        <Form.Item
+          name="textbook"
+          label="Did this professor use textbooks?"
+          valuePropName="checked"
+        >
+          <Switch />
+        </Form.Item>
+
         <Form.Item name="feedback" label="Feedback">
           <TextArea rows={4} placeholder="maxLength is 6" maxLength={6} />
         </Form.Item>
 
-        {/* <Form.Item label="InputNumber">
-          <Form.Item name="input-number" noStyle>
-            <InputNumber min={1} max={10} />
-          </Form.Item>
-          <span className="ant-form-text"> machines</span>
-        </Form.Item>
-
-        <Form.Item name="switch" label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-
         <Form.Item
-          name="radio-button"
-          label="Radio.Button"
-          rules={[
-            {
-              required: true,
-              message: "Please pick an item!",
-            },
-          ]}
+          name="exam-types"
+          label="What type of exams did this professor give?"
         >
-          <Radio.Group>
-            <Radio.Button value="a">item 1</Radio.Button>
-            <Radio.Button value="b">item 2</Radio.Button>
-            <Radio.Button value="c">item 3</Radio.Button>
-          </Radio.Group>
-        </Form.Item>
-
-        <Form.Item name="checkbox-group" label="Checkbox.Group">
           <Checkbox.Group>
             <Row>
               <Col span={8}>
                 <Checkbox
-                  value="A"
+                  value="Multiple Choice"
                   style={{
                     lineHeight: "32px",
                   }}
                 >
-                  A
+                  Multiple Choice
                 </Checkbox>
               </Col>
               <Col span={8}>
                 <Checkbox
-                  value="B"
+                  value="True/False"
                   style={{
                     lineHeight: "32px",
                   }}
                   disabled
                 >
-                  B
+                  True/False
                 </Checkbox>
               </Col>
               <Col span={8}>
                 <Checkbox
-                  value="C"
+                  value="Essay"
                   style={{
                     lineHeight: "32px",
                   }}
                 >
-                  C
+                  Essay
                 </Checkbox>
               </Col>
               <Col span={8}>
                 <Checkbox
-                  value="D"
+                  value="Written Problems"
                   style={{
                     lineHeight: "32px",
                   }}
                 >
-                  D
+                  Written Problems
                 </Checkbox>
               </Col>
               <Col span={8}>
                 <Checkbox
-                  value="E"
+                  value="Group Projects"
                   style={{
                     lineHeight: "32px",
                   }}
                 >
-                  E
+                  Group Projects
                 </Checkbox>
               </Col>
               <Col span={8}>
                 <Checkbox
-                  value="F"
+                  value="Individual Assignments"
                   style={{
                     lineHeight: "32px",
                   }}
                 >
-                  F
+                  Individual Assignments
                 </Checkbox>
               </Col>
             </Row>
           </Checkbox.Group>
-        </Form.Item> */}
+        </Form.Item>
 
         <Form.Item
           wrapperCol={{
             span: 12,
             offset: 6,
           }}
+          style={{ display: "flex", justifyContent: "center", padding: "20px" }}
         >
-          <Button type="primary" htmlType="submit">
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{
+              width: "20vw",
+              backgroundColor: "#198754",
+              border: "1px solid #198754",
+              borderRadius: "5px",
+            }}
+          >
             Submit
           </Button>
         </Form.Item>
