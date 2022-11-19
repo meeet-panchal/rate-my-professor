@@ -147,7 +147,7 @@ const Ratings = () => {
           </Select>
         </Form.Item>
 
-        <Form.Item name="recommend" label="Recommend">
+        <Form.Item name="recommend" label="Teaching">
           <Slider
             marks={{
               0: "Poor",
