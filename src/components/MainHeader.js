@@ -4,7 +4,7 @@ const MainHeader = () => {
   return (
     <header>
       <div className="navigation" id="navigation">
-        {/* <i className="fa fa-times" onClick="hidemenu()"></i> */}
+        
         <ul>
           <li>
             <Link to="/ratings">RATINGS</Link>
@@ -16,7 +16,7 @@ const MainHeader = () => {
             <Link to="/professors">PROFESSORS</Link>
           </li>
           <li>
-            <Link to="/contactus">CONTACT US</Link>
+            <Link to="/contact">CONTACT US</Link>
           </li>
           <li>
             <Link to="/about-us">ABOUT US</Link>

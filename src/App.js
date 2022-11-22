@@ -1,8 +1,11 @@
 import "./App.css";
+
 import RegisterationForm from "./components/UserDetails/UserRegisteration";
+import Universities from "./components/Universities/universities";
 import Home from "./components/HomePage/home";
 import AboutUs from "./components/About/About"
 import Ratings from "./components/Ratings/ratings";
+import ContactUs from "./components/Contact/contact";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,8 +13,10 @@ function App() {
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/register" element={<RegisterationForm />} />
-      <Route path="/about-us" element={<AboutUs />} /
+      <Route path="/universities" element={<Universities />} />
+      <Route path="/about-us" element={<AboutUs />}/>
       <Route path="/ratings" element={<Ratings />} />
+      <Route path="/contact" element={<ContactUs />} />
 
       {/* <Route path="/*" element={<NotFound />} /> */}
 

@@ -40,10 +40,10 @@ const Home = () => {
         <nav>
           <div className="logo">
             <a href="index.html">
-              
-                <span id="part1">Rate My</span>
-                <span id="part2"> Professor</span>
-              
+
+              <span id="part1">Rate My</span>
+              <span id="part2"> Professor</span>
+
             </a>
           </div>
           <MainHeader></MainHeader>
@@ -109,7 +109,7 @@ const Home = () => {
                 <p>
                   I am an assistant professor at McMaster University. Before
                   joining McMaster University, I was a Principal Researcher at
-                  Huawei Technologies Canada, Co., Ltd and research. 
+                  Huawei Technologies Canada, Co., Ltd and research.
                 </p>
                 <p>mike@gmail.com</p>
                 <p>
@@ -213,13 +213,13 @@ const Home = () => {
         <div className="contact-section">
           <div className="contact-info">
             <div>
-              <BsBuilding></BsBuilding> Golden Square, Near Parle Point, Surat
+              <BsBuilding></BsBuilding> 299 Doon Valley Drive
             </div>
             <div>
               <BsFillEnvelopeFill></BsFillEnvelopeFill> ratinginfo@email.com
             </div>
             <div>
-              <BsFillTelephoneFill></BsFillTelephoneFill> +91 8320650059
+              <BsFillTelephoneFill></BsFillTelephoneFill> +1 8320650059
             </div>
             <div>
               <BsFillAlarmFill></BsFillAlarmFill> 24/7 services available
@@ -256,71 +256,71 @@ const Home = () => {
             </form>
           </div>
         </div>
-      
+
       </Container>
-      
-<footer className="footer-distributed">
 
-			<div className="footer-left">
+      <footer className="footer-distributed">
 
-				<h3>Rate <span>MyProfessor</span></h3>
+        <div className="footer-left">
 
-				<p className="footer-links">
-					<a href="#" className="link-1">Home</a>
-					
-					<a href="#">Home</a>
-				
-					<a href="#">Rating</a>
-				
-					<a href="#">Universities</a>
-					
-					<a href="#">About</a>
-					
-					<a href="#">Contact</a>
-				</p>
+          <h3>Rate <span>MyProfessor</span></h3>
 
-				<p className="footer-company-name"> Rate My Professor © 2015</p>
-			</div>
+          <p className="footer-links">
+            <a href="#" className="link-1">Home</a>
 
-			<div className="footer-center">
+            <a href="#">Home</a>
 
-				<div>
-					<i className="fa fa-map-marker"></i>
-					<p> Golden Square, Near Parle Point, Surat</p>
-				</div>
+            <a href="#">Rating</a>
 
-				<div>
-					<i className="fa fa-phone"></i>
-					<p>+91 8320650059</p>
-				</div>
+            <a href="#">Universities</a>
 
-				<div>
-					<i className="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">ratemyprofessor@gmail.com</a></p>
-				</div>
+            <a href="#">About</a>
 
-			</div>
+            <a href="#">Contact</a>
+          </p>
 
-			<div className="footer-right">
+          <p className="footer-company-name"> Rate My Professor © 2015</p>
+        </div>
 
-				<p className="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
+        <div className="footer-center">
 
-				<div className="footer-icons">
+          <div>
+            <i className="fa fa-map-marker"></i>
+            <p> 299 Doon Valley Drive. Kitchener, Ontario N2G 4M4t</p>
+          </div>
 
-					<a href="#"><i className="fa fa-facebook"></i><BsFacebook></BsFacebook></a>
-          
-					<a href="#"><i className="fa fa-twitter"></i><BsTwitter></BsTwitter></a>
-					<a href="#"><i className="fa fa-linkedin"></i><BsLinkedin></BsLinkedin></a>
-					<a href="#"><i className="fa fa-github"></i><BsGithub></BsGithub></a>
+          <div>
+            <i className="fa fa-phone"></i>
+            <p>+1 8320650059</p>
+          </div>
 
-				</div>
+          <div>
+            <i className="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">ratemyprofessor@gmail.com</a></p>
+          </div>
 
-			</div>
+        </div>
 
-		</footer>
+        <div className="footer-right">
+
+          <p className="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+          </p>
+
+          <div className="footer-icons">
+
+            <a href="#"><i className="fa fa-facebook"></i><BsFacebook></BsFacebook></a>
+
+            <a href="#"><i className="fa fa-twitter"></i><BsTwitter></BsTwitter></a>
+            <a href="#"><i className="fa fa-linkedin"></i><BsLinkedin></BsLinkedin></a>
+            <a href="#"><i className="fa fa-github"></i><BsGithub></BsGithub></a>
+
+          </div>
+
+        </div>
+
+      </footer>
     </div>
   );
 };

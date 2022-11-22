@@ -1,0 +1,31 @@
+.backgroundCover {
+
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+  }
+
+  .star{
+    border-radius: 3px;
+    color:black;
+  }
+  .uni1 {
+    background-image: url("../../../public/images/uni/uni1.jpg");
+  }
+  
+  .uni2 {
+    background-image: url("../../../public/images/uni/uni2.jpg");
+  }
+  .uni3 {
+    background-image: url("../../../public/images/uni/uni3.jpg");
+  }
+  .uni4 {
+    background-image: url("../../../public/images/uni/uni4.jpg");
+  }
+  
+  .header-text {
+    text-align: center;
+    font-size: bold;
+  }
+  
