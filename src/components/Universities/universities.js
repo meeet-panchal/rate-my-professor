@@ -175,63 +175,50 @@ const Ratings = () => {
           <Rate />
         </Form.Item>
 
-        <Form.Item name="rate" label="Rate">
+        <Form.Item  className="star" name="rate" label="Location">
           <Rate />
         </Form.Item>
 
-        <Form.Item name="rate" label="Rate">
+        <Form.Item  className="star" name="rate" label="Opportunities">
           <Rate />
         </Form.Item>
 
-        <Form.Item
-          name="tags"
-          label="Tags"
-          rules={[
+        <Form.Item  className="star" name="rate" label="ReputaFacilities and common areastion">
+          <Rate />
+        </Form.Item>
+
+        <Form.Item  className="star" name="rate" label="Internet">
+          <Rate />
+        </Form.Item>
+
+        <Form.Item  className="star" name="rate" label="Food">
+          <Rate />
+        </Form.Item>
+
+        <Form.Item  className="star" name="rate" label="Club">
+          <Rate />
+        </Form.Item>
+
+        <Form.Item  className="star" name="rate" label="Social">
+          <Rate />
+        </Form.Item>
+
+        <Form.Item  className="star" name="rate" label="Happiness">
+          <Rate />
+        </Form.Item>
+
+        <Form.Item  className="star" name="rate" label="Safety" rules={[
             {
               required: true,
               message: "Please select your tags!",
               type: "array",
             },
-          ]}
-        >
-          <Select
-            mode="multiple"
-            placeholder="Please select tags for your professor"
-          >
-            <Option value="Respected">Respected</Option>
-            <Option value="Clear instructions">Clear instructions</Option>
-            <Option value="Clear grading criteria">
-              Clear grading criteria
-            </Option>
-          </Select>
+          ]}>
+          <Rate />
         </Form.Item>
 
-        <Form.Item name="recommend" label="Recommend">
-          <Slider
-            marks={{
-              0: "Poor",
-              20: "Below average",
-              40: "Good",
-              60: "Above average",
-              80: "Excellent",
-              100: "Proficient",
-            }}
-          />
-        </Form.Item>
-
-        <Form.Item name="attendance" label="Was attendance mandatory?">
-          <Radio.Group>
-            <Radio value="true">Yes</Radio>
-            <Radio value="false">No</Radio>
-          </Radio.Group>
-        </Form.Item>
-
-        <Form.Item name="recommend" label="Will you recommend this professor?">
-          <Radio.Group>
-            <Radio value="true">Yes</Radio>
-            <Radio value="false">No</Radio>
-          </Radio.Group>
-        </Form.Item>
+        
+         
 
         <Form.Item name="feedback" label="Feedback">
           <TextArea rows={4} placeholder="maxLength is 6" maxLength={6} />
