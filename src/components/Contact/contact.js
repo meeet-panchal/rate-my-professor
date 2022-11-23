@@ -50,7 +50,7 @@ function ContactUs() {
 
                 <H1>Contact Us</H1>
                 <Row>
-                    <Col xs={12} md={12} lg={12}>
+                    <Col>
                         <div className="container">
                             <img src={"/images/contact.jpg"} style={{ width: "100%", height: "60vh" }} />
                             <p></p>
@@ -83,7 +83,7 @@ function ContactUs() {
                                     </div>
 
                                     <div className="row">
-                                        <div className="text-center">
+                                    <div className="d-flex justify-content-center">
                                             <input type="submit" value="Submit" />
                                         </div>
                                     </div>

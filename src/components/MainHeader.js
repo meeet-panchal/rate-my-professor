@@ -25,10 +25,10 @@ const MainHeader = () => {
             <Link to="/register">REGISTER</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login">LOGIN</Link>
           </li>
           <li>
-            <Link to="/donation">Donation</Link>
+            <Link to="/donation">DONATION</Link>
           </li>
 
         </ul>
