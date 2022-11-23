@@ -57,7 +57,7 @@ const tailFormItemLayout = {
   },
 };
 
-const RegisterationForm = () => {
+const Login = () => {
   const [form] = Form.useForm();
 
   const onFinish = async (values) => {
@@ -243,4 +243,4 @@ const RegisterationForm = () => {
     </>
   );
 };
-export default RegisterationForm;
+export default Login;
