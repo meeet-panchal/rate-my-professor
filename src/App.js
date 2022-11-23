@@ -8,6 +8,7 @@ import ContactUs from "./components/Contact/contact";
 import Professor from "./components/ProfessorDetails/ProfessorDetails";
 import { Routes, Route } from "react-router-dom";
 import Donation from "./components/Donation";
+import ProfessorList from "./components/ProfessorList/ProfessorList";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/contact" element={<ContactUs />} />
       <Route path="/professors" element={<Professor />} />
       <Route path="/donation" element={<Donation />} />
+      <Route path="/professorlist" element={<ProfessorList />} />
 
       {/* <Route path="/*" element={<NotFound />} /> */}
     </Routes>

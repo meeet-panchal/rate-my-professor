@@ -4,7 +4,6 @@ const MainHeader = () => {
   return (
     <header>
       <div className="navigation" id="navigation">
-        
         <ul>
           <li>
             <Link to="/ratings">RATINGS</Link>
@@ -14,6 +13,9 @@ const MainHeader = () => {
           </li>
           <li>
             <Link to="/professors">PROFESSORS</Link>
+          </li>
+          <li>
+            <Link to="/professorlist">LIST</Link>
           </li>
           <li>
             <Link to="/contact">CONTACT US</Link>
