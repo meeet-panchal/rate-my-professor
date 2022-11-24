@@ -88,7 +88,7 @@ const normFile = (e) => {
   return e?.fileList;
 };
 
-const Ratings = () => {
+const Universities = () => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
   };
@@ -400,4 +400,4 @@ const Ratings = () => {
   );
 };
 
-export default Ratings;
+export default Universities;

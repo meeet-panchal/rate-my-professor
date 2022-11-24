@@ -26,6 +26,13 @@ const MainHeader = () => {
           <li>
             <Link to="/register">REGISTER</Link>
           </li>
+          <li>
+            <Link to="/login">LOGIN</Link>
+          </li>
+          <li>
+            <Link to="/donation">DONATION</Link>
+          </li>
+
         </ul>
       </div>
     </header>
