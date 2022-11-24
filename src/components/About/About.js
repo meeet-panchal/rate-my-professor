@@ -48,8 +48,7 @@ function AboutUs() {
 
 
         <H1>About Us</H1>
-        <Row>
-          <Col xs={12} md={12} lg={12}>
+       
             <div className="container">
               <img src={"/images/about.jpg"} style={{ width: "100%", height: "90vh" }} />
               <div className="container">
@@ -59,52 +58,40 @@ function AboutUs() {
 
                   Rate My Professors is built for college students. Choosing the best courses and professors is a rite of passage for every student, and connecting with peers on the site has become a key way for millions of students to navigate this process. The site does what students have been doing forever - checking in with each other – their friends, their brothers, their sisters, their classNamemates – to figure out who's a great professor and who's one you might want to avoid.</p>
               </div>
-            </div>
-          </Col>
-
-
-        </Row>
+            
+              </div>
 
 
 
         <H1>Our Features</H1>
-        <div className="row">
-          <div className="column">
+        <Row>
+          <Col xs={12} md={6} lg={4}>
             <div className="card">
               <img src={"/images/like.jpg"} style={{ width: "100%" }} />
               <div className="">
                 <H3>LIKE OR DISLIKE</H3>
-
-
-
               </div>
             </div>
-          </div>
-
-          <div className="column">
+          </Col>
+          <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/uni.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/uni.jpg"}  style={{ width: "100%" }} />
               <div className="">
                 <H3>UNIVERSITIES</H3>
-
-
-
+                
               </div>
             </div>
-          </div>
-
-          <div className="column">
+          </Col>
+          <Col xs={12} md={6} lg={4}>
             <div className="card">
               <img src={"/images/update.jpg"} style={{ width: "100%" }} />
               <div className="">
-                <H3>EDIT YOUR RATINGS</H3>
-
-
-
+                <H3>UPDATE RATINGS</H3>
               </div>
             </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
+       
       </Container>
       <footer className="footer-distributed">
 
