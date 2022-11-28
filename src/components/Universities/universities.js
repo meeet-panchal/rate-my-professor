@@ -95,22 +95,6 @@ const Universities = () => {
 
   return (
     <div className="App">
-   
-      <nav>
-        <div className="logo">
-          <a href="index.html">
-
-            <span id="part1">Rate My</span>
-            <span id="part2"> Professor</span>
-
-          </a>
-        </div>
-        <MainHeader></MainHeader>
-        {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-      </nav>
-    
-       
-    
       <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className="uni1">
