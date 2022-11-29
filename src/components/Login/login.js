@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
-import registrationApi from "../../api/registrationApi";
+import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast';
 import { Button, Form, Input } from "antd";
 
 const formItemLayout = {
@@ -48,27 +49,26 @@ const Login = () => {
       email: email,
       password: password,
     };
-    const response = await registrationApi.post(
-      "/register",
-      registerationDetails
-    );
-    console.log("Received values of form: ", values);
-    console.log("values passed from the form", response);
+    await axios.post("http://localhost:3600/login",registerationDetails,
+    { withCredentials: true, "Access-Control-Allow-Credentials" : true }).then(userData=>{
+      const {data:{data:{userInfo,accessToken},message} } = userData
+      localStorage.setItem("token",JSON.stringify(accessToken))
+      localStorage.setItem("userInfo",JSON.stringify(userInfo))
+      toast.success(message)
+    })
+
   };
 
   return (
     <>
       <div className="App">
+      <Toaster/>
       <Container>
         <Form
           {...formItemLayout}
           form={form}
           name="register"
           onFinish={onFinish}
-          initialValues={{
-            residence: ["zhejiang", "hangzhou", "xihu"],
-            prefix: "86",
-          }}
           scrollToFirstError
         >
           

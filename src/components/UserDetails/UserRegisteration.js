@@ -1,6 +1,10 @@
+import {useState,useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
 import Container from "react-bootstrap/Container";
-import registrationApi from "../../api/registrationApi";
 import { Button,Form, Input, Select } from "antd";
+import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast';
+import registrationApi from "../../api/registrationApi";
 
 
 const { Option } = Select;
@@ -38,6 +42,16 @@ const tailFormItemLayout = {
 
 const RegisterationForm = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate()
+
+  const [department,setDepartment] = useState([])
+  const [institution,setInstitution] = useState([])
+
+  useEffect(()=>{
+    axios.get('http://localhost:3600/institutions').then(data=>setInstitution(data?.data?.data))
+    axios.get('http://localhost:3600/departments').then(data=>setDepartment(data?.data?.data))
+  },[])
+
 
   const onFinish = async (values) => {
     const {
@@ -48,6 +62,7 @@ const RegisterationForm = () => {
       isStudent,
       lastName,
       password,
+      year
     } = values;
 
     const registerationDetails = {
@@ -58,18 +73,25 @@ const RegisterationForm = () => {
       isStudent: isStudent,
       lastName: lastName,
       password: password,
+      year
     };
-    const response = await registrationApi.post(
+    registrationApi.post(
       "/register",
       registerationDetails
-    );
-    console.log("Received values of form: ", values);
-    console.log("values passed from the form", response);
+    ).then(data=>{
+      if(data?.status === 201){
+        toast.success(data?.data?.message)
+        setTimeout(() => {navigate('/login')}, 2000);
+      }
+    }).catch(error=>{
+      toast.error(error?.response?.data?.message)
+    });
   };
 
   return (
     <>
       <div className="App">
+      <Toaster/>
         <Container>
           <Form
             {...formItemLayout}
@@ -77,8 +99,7 @@ const RegisterationForm = () => {
             name="register"
             onFinish={onFinish}
             initialValues={{
-              residence: ["zhejiang", "hangzhou", "xihu"],
-              prefix: "86",
+
             }}
             scrollToFirstError
           >
@@ -179,7 +200,9 @@ const RegisterationForm = () => {
                 },
               ]}
             >
-              <Input />
+              <Select placeholder="Select your Type">
+              {institution.map(data=>(<Option value={data?._id}>{data?.universityname}</Option>))}
+              </Select>
             </Form.Item>
 
             <Form.Item
@@ -188,11 +211,13 @@ const RegisterationForm = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please input your Department!",
+                  message: "Please select your department",
                 },
               ]}
             >
-              <Input />
+              <Select placeholder="Select your Type">
+              {department.map(data=>(<Option value={data?._id}>{data?.name}</Option>))}
+              </Select>
             </Form.Item>
 
             <Form.Item
@@ -209,6 +234,19 @@ const RegisterationForm = () => {
                 <Option value="true">Student</Option>
                 <Option value="false">Professor</Option>
               </Select>
+            </Form.Item>
+
+            <Form.Item
+              name="year"
+              label="Year"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your year of graduation or teaching",
+                },
+              ]}
+            >
+              <Input type='number' />
             </Form.Item>
 
             <Form.Item {...tailFormItemLayout}>

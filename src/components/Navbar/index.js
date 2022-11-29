@@ -1,6 +1,28 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+
 
 const NavigationBar = () => {
+    const location = useLocation();
+    const [loggedInStatus, setLoggedInStatus] = useState(true)
+    const [userData, setUserData] = useState({})
+
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("token")
+        const userInfo = JSON.parse(localStorage.getItem("userInfo"))
+
+        if (authToken !== null) {
+            setLoggedInStatus(true)
+            setUserData(userInfo)
+        } else {
+            setLoggedInStatus(false)
+            setUserData({})
+        }
+
+    }, [location])
+
+
     return (
         <nav className="navigation" id="navigation">
             <div className="logo">
@@ -15,12 +37,14 @@ const NavigationBar = () => {
                 <div className="navigation" id="navigation">
 
                     <ul>
+                        {loggedInStatus && userData?.isStudent &&(
+                        <>
                         <li>
                             <Link to="/universities">UNIVERSITIES</Link>
                         </li>
                         <li>
                             <Link to="/professors">PROFESSORS</Link>
-                        </li>
+                        </li></>)}
                         <li>
                             <Link to="/contact">CONTACT US</Link>
                         </li>
@@ -30,12 +54,17 @@ const NavigationBar = () => {
                         <li>
                             <Link to="/donation">DONATE</Link>
                         </li>
-                        <li>
+                        {loggedInStatus && <li>
+                           Hey {userData?.firstName} {userData.lastName}
+                        </li>}
+                        {loggedInStatus ? (<li>
+                            <Link to="/logout">LOGOUT</Link>
+                        </li>) : (<li>
                             <Link to="/login">LOGIN</Link>
-                        </li>
-                        <li>
+                        </li>)}
+                        {!loggedInStatus && (<li>
                             <Link to="/register">REGISTER</Link>
-                        </li>
+                        </li>)}
                     </ul>
                 </div>
             </header>
