@@ -15,7 +15,7 @@ const Home = () => {
     <div className="App">
       <section className="header">
         <div className="text-box">
-          <H1>
+          <H1 style={{ display: "flex", justifyContent: "center" }}>
             <BsFillEmojiLaughingFill></BsFillEmojiLaughingFill>{" "}
             <BsFillEmojiNeutralFill></BsFillEmojiNeutralFill>{" "}
             <BsFillEmojiFrownFill></BsFillEmojiFrownFill>{" "}

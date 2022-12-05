@@ -109,7 +109,7 @@ const Login = () => {
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>
               <Button className="visit-btn" type="primary" htmlType="submit">
-                Register
+                Login
               </Button>
             </Form.Item>
           </Form>
