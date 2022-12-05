@@ -1,20 +1,8 @@
 import React from "react";
-import MainHeader from "../MainHeader";
 
 const AboutSection = () => {
   return (
     <>
-      <nav>
-        <div className="logo">
-          <a href="index.html">
-            <span id="part1">Rate My</span>
-            <span id="part2"> Professor</span>
-          </a>
-        </div>
-        <MainHeader></MainHeader>
-        {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-      </nav>
-
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
         <p
           class=" mb-4 block text-3xl font-bold text-center"

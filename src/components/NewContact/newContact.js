@@ -10,17 +10,6 @@ import {
 const ContactSection = () => {
   return (
     <>
-      <nav>
-        <div className="logo">
-          <a href="index.html">
-            <span id="part1">Rate My</span>
-            <span id="part2"> Professor</span>
-          </a>
-        </div>
-        <MainHeader></MainHeader>
-        {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-      </nav>
-
       <section class="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap lg:justify-between">

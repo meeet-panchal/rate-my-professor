@@ -175,20 +175,6 @@ const Home = () => {
 
         <H1>Get In Touch</H1>
         <div className="contact-section">
-          <div className="contact-info">
-            <div>
-              <BsBuilding></BsBuilding> 299 Doon Valley Drive
-            </div>
-            <div>
-              <BsFillEnvelopeFill></BsFillEnvelopeFill> ratinginfo@email.com
-            </div>
-            <div>
-              <BsFillTelephoneFill></BsFillTelephoneFill> +1 8320650059
-            </div>
-            <div>
-              <BsFillAlarmFill></BsFillAlarmFill> 24/7 services available
-            </div>
-          </div>
           <div className="contact-form">
             <form className="contact" action="" method="post">
               <input
@@ -221,79 +207,6 @@ const Home = () => {
           </div>
         </div>
       </Container>
-
-      <footer className="footer-distributed">
-        <div className="footer-left">
-          <h3>
-            Rate <span>MyProfessor</span>
-          </h3>
-
-          <p className="footer-links">
-            <a href="#" className="link-1">
-              Home
-            </a>
-
-            <a href="#">Home</a>
-
-            <a href="#">Rating</a>
-
-            <a href="#">Universities</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Contact</a>
-          </p>
-
-          <p className="footer-company-name"> Rate My Professor © 2015</p>
-        </div>
-
-        <div className="footer-center">
-          <div>
-            <i className="fa fa-map-marker"></i>
-            <p> 299 Doon Valley Drive. Kitchener, Ontario N2G 4M4t</p>
-          </div>
-
-          <div>
-            <i className="fa fa-phone"></i>
-            <p>+1 8320650059</p>
-          </div>
-
-          <div>
-            <i className="fa fa-envelope"></i>
-            <p>
-              <a href="mailto:support@company.com">ratemyprofessor@gmail.com</a>
-            </p>
-          </div>
-        </div>
-
-        <div className="footer-right">
-          <p className="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-            euismod convallis velit, eu auctor lacus vehicula sit amet.
-          </p>
-
-          <div className="footer-icons">
-            <a href="#">
-              <i className="fa fa-facebook"></i>
-              <BsFacebook></BsFacebook>
-            </a>
-
-            <a href="#">
-              <i className="fa fa-twitter"></i>
-              <BsTwitter></BsTwitter>
-            </a>
-            <a href="#">
-              <i className="fa fa-linkedin"></i>
-              <BsLinkedin></BsLinkedin>
-            </a>
-            <a href="#">
-              <i className="fa fa-github"></i>
-              <BsGithub></BsGithub>
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
