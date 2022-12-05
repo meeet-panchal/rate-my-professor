@@ -95,22 +95,6 @@ const Universities = () => {
 
   return (
     <div className="App">
-   
-      <nav>
-        <div className="logo">
-          <a href="index.html">
-
-            <span id="part1">Rate My</span>
-            <span id="part2"> Professor</span>
-
-          </a>
-        </div>
-        <MainHeader></MainHeader>
-        {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-      </nav>
-    
-       
-    
       <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className="uni1">
@@ -224,102 +208,6 @@ const Universities = () => {
           <TextArea rows={4} placeholder="maxLength is 6" maxLength={6} />
         </Form.Item>
 
-        {/* <Form.Item label="InputNumber">
-          <Form.Item name="input-number" noStyle>
-            <InputNumber min={1} max={10} />
-          </Form.Item>
-          <span className="ant-form-text"> machines</span>
-        </Form.Item>
-
-        <Form.Item name="switch" label="Switch" valuePropName="checked">
-          <Switch />
-        </Form.Item>
-
-        <Form.Item
-          name="radio-button"
-          label="Radio.Button"
-          rules={[
-            {
-              required: true,
-              message: "Please pick an item!",
-            },
-          ]}
-        >
-          <Radio.Group>
-            <Radio.Button value="a">item 1</Radio.Button>
-            <Radio.Button value="b">item 2</Radio.Button>
-            <Radio.Button value="c">item 3</Radio.Button>
-          </Radio.Group>
-        </Form.Item>
-
-        <Form.Item name="checkbox-group" label="Checkbox.Group">
-          <Checkbox.Group>
-            <Row>
-              <Col span={8}>
-                <Checkbox
-                  value="A"
-                  style={{
-                    lineHeight: "32px",
-                  }}
-                >
-                  A
-                </Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox
-                  value="B"
-                  style={{
-                    lineHeight: "32px",
-                  }}
-                  disabled
-                >
-                  B
-                </Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox
-                  value="C"
-                  style={{
-                    lineHeight: "32px",
-                  }}
-                >
-                  C
-                </Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox
-                  value="D"
-                  style={{
-                    lineHeight: "32px",
-                  }}
-                >
-                  D
-                </Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox
-                  value="E"
-                  style={{
-                    lineHeight: "32px",
-                  }}
-                >
-                  E
-                </Checkbox>
-              </Col>
-              <Col span={8}>
-                <Checkbox
-                  value="F"
-                  style={{
-                    lineHeight: "32px",
-                  }}
-                >
-                  F
-                </Checkbox>
-              </Col>
-            </Row>
-          </Checkbox.Group>
-        </Form.Item> */}
-
         <Form.Item
           wrapperCol={{
             span: 12,
@@ -332,69 +220,6 @@ const Universities = () => {
         </Form.Item>
       </Form>
       </Container>
-      <footer className="footer-distributed">
-
-<div className="footer-left">
-
-  <h3>Rate <span>MyProfessor</span></h3>
-
-  <p className="footer-links">
-    <a href="#" className="link-1">Home</a>
-
-    <a href="#">Home</a>
-
-    <a href="#">Rating</a>
-
-    <a href="#">Universities</a>
-
-    <a href="#">About</a>
-
-    <a href="#">Contact</a>
-  </p>
-
-  <p className="footer-company-name"> Rate My Professor © 2015</p>
-</div>
-
-<div className="footer-center">
-
-  <div>
-    <i className="fa fa-map-marker"></i>
-    <p> 299 Doon Valley Drive. Kitchener, Ontario N2G 4M4t</p>
-  </div>
-
-  <div>
-    <i className="fa fa-phone"></i>
-    <p>+1 8320650059</p>
-  </div>
-
-  <div>
-    <i className="fa fa-envelope"></i>
-    <p><a href="mailto:support@company.com">ratemyprofessor@gmail.com</a></p>
-  </div>
-
-</div>
-
-<div className="footer-right">
-
-  <p className="footer-company-about">
-    <span>About the company</span>
-    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-  </p>
-
-  <div className="footer-icons">
-
-    <a href="#"><i className="fa fa-facebook"></i><BsFacebook></BsFacebook></a>
-
-    <a href="#"><i className="fa fa-twitter"></i><BsTwitter></BsTwitter></a>
-    <a href="#"><i className="fa fa-linkedin"></i><BsLinkedin></BsLinkedin></a>
-    <a href="#"><i className="fa fa-github"></i><BsGithub></BsGithub></a>
-
-  </div>
-
-</div>
-
-</footer>
-     
     </div>
     
   );

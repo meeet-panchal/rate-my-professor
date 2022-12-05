@@ -1,52 +1,16 @@
+/* eslint-disable jsx-a11y/heading-has-content */
 import { Carousel } from "antd";
-import registrationApi from "../../api/registrationApi";
 import Container from "react-bootstrap/Container";
-import MainHeader from "../MainHeader";
 import "./ratings.css";
-import "../../App.css";
-import { Paragraph, H1, UL, LI, A, H2, H3, H4 } from "../../styleComponents.js";
-import {
-  BsGithub,
-  BsTwitter,
-  BsInstagram,
-  BsLinkedin,
-  BsFillEmojiLaughingFill,
-  BsFillEmojiNeutralFill,
-  BsFillEmojiFrownFill,
-  BsFillEmojiHeartEyesFill,
-  BsFillEmojiAngryFill,
-  BsFillAlarmFill,
-  BsFillEnvelopeFill,
-  BsFillTelephoneFill,
-  BsBuilding,
-  BsFacebook,
-} from "react-icons/bs";
-
-import React from "react";
-
-import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
-import {
-  Button,
-  Checkbox,
-  Col,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-  Rate,
-  Row,
-  Select,
-  Slider,
-  Switch,
-  Upload,
-} from "antd";
+import { H1 } from "../../styleComponents.js";
+import { Button, Checkbox, Col, Form, Input, Radio, Rate, Row, Select, Switch } from "antd";
 const { TextArea } = Input;
+
 const contentStyle = {
   height: "460px",
   color: "#fff",
   lineHeight: "160px",
   textAlign: "center",
-  // backgroundImage: ' url("images/background/bg-image3.jpg")',
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
 };
@@ -72,79 +36,44 @@ const formItemLayout = {
   },
 };
 
-const normFile = (e) => {
-  console.log("Upload event:", e);
-  if (Array.isArray(e)) {
-    return e;
-  }
-  return e?.fileList;
-};
-
 const Ratings = () => {
+
   const [form] = Form.useForm();
 
-  const onFinish = async (values) => {
-    console.log("Received values of form: ", values);
-    const {
-      university,
-      rate,
-      tags,
-      teaching,
-      isAttendance,
-      isRecommend,
-      isCredit,
-      isTextbook,
-      feedback,
-      examtypes,
-    } = values;
+  const professorTags = ["Tough Grader", "Participation Matters", "Group Projects",
+    "Lots Of Homework", "Gives Good Feedback", "Clear Grading Criteria", "Accessible Outside Class", "Graded By Few Things", "Respected"]
 
-    const professorDetails = {
-      university: university,
-      rate: rate,
-      tags: tags,
-      teaching: teaching,
-      isAttendance: isAttendance,
-      isRecommend: isRecommend,
-      isCredit: isCredit,
-      isTextbook: isTextbook,
-      feedback: feedback,
-      examtypes: examtypes,
-    };
-    const response = await registrationApi.post(
-      "/professors",
-      professorDetails
-    );
+  const onFinish = async (values) => {
+/*     const { overallRating, tags, rateTeaching,
+      isAttendanceMandatory, isRecommended, isCourseTakenForCredit,
+      isTextbookPreferred, feedback, examTypes } = values */
+
+    const ratingGivenBy = "JSON.parse()"
+    const ratingGivenFor = ""
+
+    const ratingsFeedback = {...values,ratingGivenBy,ratingGivenFor};
+    // const response = await registrationApi.post(
+    //   "/professors",
+    //   professorDetails
+    // );
     console.log("Received values of form: ", values);
-    console.log("values passed from the form", response);
+    // console.log("values passed from the form", response);
   };
 
   return (
     <div className="App">
-      <nav>
-        <div className="logo">
-          <a href="index.html">
-            <span id="part1">Rate My</span>
-            <span id="part2"> Professor</span>
-          </a>
-        </div>
-        <MainHeader></MainHeader>
-        {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-      </nav>
-
       <Carousel autoplay>
         <div>
-          <h3 style={contentStyle} className="bg-image1"></h3>
+          <h3 style={contentStyle} className="bg-image1" />
         </div>
         <div>
-          <h3 style={contentStyle} className="bg-image2"></h3>
+          <h3 style={contentStyle} className="bg-image2" />
         </div>
         <div>
-          <h3 style={contentStyle} className="bg-image3"></h3>
+          <h3 style={contentStyle} className="bg-image3" />
         </div>
         <div>
-          <h3 style={contentStyle} className="bg-image4">
-            4
-          </h3>
+          <h3 style={contentStyle} className="bg-image4" />
         </div>
       </Carousel>
       <Container>
@@ -153,36 +82,11 @@ const Ratings = () => {
           form={form}
           name="validate_other"
           onFinish={onFinish}
-          initialValues={{
-            "input-number": 3,
-            "checkbox-group": ["A", "B"],
-            rate: 3.5,
-          }}
         >
           <H1>Rate your Professor</H1>
-
           <Form.Item
-            name="university"
-            label="University"
-            hasFeedback
-            rules={[
-              {
-                required: true,
-                message: "Please select your University!",
-              },
-            ]}
-          >
-            <Select placeholder="Please select University">
-              <Option value="university of waterloo">
-                University of Waterloo
-              </Option>
-              <Option value="conestoga college">Conestoga College</Option>
-            </Select>
-          </Form.Item>
-
-          <Form.Item
-            name="rate"
-            label="Rate"
+            name="overallRating"
+            label="Overall Rating"
             rules={[
               {
                 required: true,
@@ -190,7 +94,7 @@ const Ratings = () => {
               },
             ]}
           >
-            <Rate />
+            <Rate style={{ backgroundColor: 'white', padding: ' 0 2rem' }} />
           </Form.Item>
 
           <Form.Item
@@ -208,16 +112,14 @@ const Ratings = () => {
               mode="multiple"
               placeholder="Please select tags for your professor"
             >
-              <Option value="Respected">Respected</Option>
-              <Option value="Clear instructions">Clear instructions</Option>
-              <Option value="Clear grading criteria">
-                Clear grading criteria
-              </Option>
+              {
+                professorTags.map(tag => (<Option value={tag}>{tag}</Option>))
+              }
             </Select>
           </Form.Item>
 
           <Form.Item
-            name="teaching"
+            name="rateTeaching"
             label="Teaching"
             rules={[
               {
@@ -226,11 +128,11 @@ const Ratings = () => {
               },
             ]}
           >
-            <Rate />
+            <Rate style={{ backgroundColor: 'white', padding: ' 0 2em' }} />
           </Form.Item>
 
           <Form.Item
-            name="isAttendance"
+            name="isAttendanceMandatory"
             label="Was attendance mandatory?"
             rules={[
               {
@@ -246,7 +148,7 @@ const Ratings = () => {
           </Form.Item>
 
           <Form.Item
-            name="isRecommend"
+            name="isRecommended"
             label="Will you recommend this professor?"
             rules={[
               {
@@ -262,7 +164,7 @@ const Ratings = () => {
           </Form.Item>
 
           <Form.Item
-            name="isCredit"
+            name="isCourseTakenForCredit"
             label="Was this class taken for credit?"
             rules={[
               {
@@ -278,7 +180,7 @@ const Ratings = () => {
           </Form.Item>
 
           <Form.Item
-            name="isTextbook"
+            name="isTextbookPreferred"
             label="Did this professor use textbooks?"
             valuePropName="checked"
             rules={[
@@ -301,11 +203,11 @@ const Ratings = () => {
               },
             ]}
           >
-            <TextArea rows={4} placeholder="maxLength is 6" maxLength={500} />
+            <TextArea rows={4} placeholder="Your comments on professor" maxLength={500} />
           </Form.Item>
 
           <Form.Item
-            name="examtypes"
+            name="examTypes"
             label="What type of exams did this professor give?"
             rules={[
               {
@@ -323,18 +225,7 @@ const Ratings = () => {
                       lineHeight: "32px",
                     }}
                   >
-                    Multiple Choice
-                  </Checkbox>
-                </Col>
-                <Col span={8}>
-                  <Checkbox
-                    value="True/False"
-                    style={{
-                      lineHeight: "32px",
-                    }}
-                    disabled
-                  >
-                    True/False
+                    Multiple Quiz
                   </Checkbox>
                 </Col>
                 <Col span={8}>
@@ -407,78 +298,6 @@ const Ratings = () => {
           </Form.Item>
         </Form>
       </Container>
-      <footer className="footer-distributed">
-        <div className="footer-left">
-          <h3>
-            Rate <span>MyProfessor</span>
-          </h3>
-
-          <p className="footer-links">
-            <a href="#" className="link-1">
-              Home
-            </a>
-
-            <a href="#">Home</a>
-
-            <a href="#">Rating</a>
-
-            <a href="#">Universities</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Contact</a>
-          </p>
-
-          <p className="footer-company-name"> Rate My Professor © 2015</p>
-        </div>
-
-        <div className="footer-center">
-          <div>
-            <i className="fa fa-map-marker"></i>
-            <p> 299 Doon Valley Drive. Kitchener, Ontario N2G 4M4t</p>
-          </div>
-
-          <div>
-            <i className="fa fa-phone"></i>
-            <p>+1 8320650059</p>
-          </div>
-
-          <div>
-            <i className="fa fa-envelope"></i>
-            <p>
-              <a href="mailto:support@company.com">ratemyprofessor@gmail.com</a>
-            </p>
-          </div>
-        </div>
-
-        <div className="footer-right">
-          <p className="footer-company-about">
-            <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-            euismod convallis velit, eu auctor lacus vehicula sit amet.
-          </p>
-
-          <div className="footer-icons">
-            <a href="#">
-              <i className="fa fa-facebook"></i>
-              <BsFacebook></BsFacebook>
-            </a>
-
-            <a href="#">
-              <i className="fa fa-twitter"></i>
-              <BsTwitter></BsTwitter>
-            </a>
-            <a href="#">
-              <i className="fa fa-linkedin"></i>
-              <BsLinkedin></BsLinkedin>
-            </a>
-            <a href="#">
-              <i className="fa fa-github"></i>
-              <BsGithub></BsGithub>
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

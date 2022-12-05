@@ -3,26 +3,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "antd";
 import React from "react";
-import { Progress } from "antd";
-import { Button, Descriptions, PageHeader, Statistic, Tag } from "antd";
-import DescriptionsItem from "antd/lib/descriptions/Item";
-import MainHeader from "../MainHeader";
-import { Divider } from "antd";
+import {Descriptions, Statistic} from "antd";
 import "./ProfessorList.css";
 
 const Professor = () => (
-  <>
-    <nav>
-      <div className="logo">
-        <a href="index.html">
-          <span id="part1">Rate My</span>
-          <span id="part2"> Professor</span>
-        </a>
-      </div>
-      <MainHeader></MainHeader>
-      {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-    </nav>
-
     <Container>
       <Row className="text-center">
         <Col
@@ -66,6 +50,5 @@ const Professor = () => (
         </Col>
       </Row>
     </Container>
-  </>
 );
 export default Professor;

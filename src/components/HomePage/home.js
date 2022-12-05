@@ -1,52 +1,19 @@
-import "../../App.css";
 import {
-  Button,
-  Paragraph,
-  H1,
-  UL,
-  LI,
-  A,
-  H2,
-  H3,
-  H4,
-} from "../../styleComponents";
-import {
-  BsGithub,
-  BsTwitter,
-  BsInstagram,
-  BsLinkedin,
   BsFillEmojiLaughingFill,
   BsFillEmojiNeutralFill,
   BsFillEmojiFrownFill,
   BsFillEmojiHeartEyesFill,
   BsFillEmojiAngryFill,
-  BsFillAlarmFill,
-  BsFillEnvelopeFill,
-  BsFillTelephoneFill,
-  BsBuilding,
-  BsFacebook,
 } from "react-icons/bs";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import MainHeader from "../MainHeader";
+import { Paragraph, H1, H3 } from "../../styleComponents";
 
 const Home = () => {
   return (
     <div className="App">
       <section className="header">
-        <nav>
-          <div className="logo">
-            <a href="index.html">
-              <span id="part1">Rate My</span>
-              <span id="part2"> Professor</span>
-            </a>
-          </div>
-          <MainHeader></MainHeader>
-          {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-        </nav>
-
         <div className="text-box">
           <H1>
             <BsFillEmojiLaughingFill></BsFillEmojiLaughingFill>{" "}
@@ -77,7 +44,7 @@ const Home = () => {
           ratings.
         </p>
 
-        <H1>Top Professors</H1>
+        <H1>Professors</H1>
         <Row>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
