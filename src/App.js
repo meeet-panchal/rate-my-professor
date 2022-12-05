@@ -10,7 +10,8 @@ import { Routes, Route } from "react-router-dom";
 import Donation from "./components/Donation";
 import ProfessorList from "./components/ProfessorList/ProfessorList";
 import Login from "./components/Login/login";
-
+import ContactSection from "./components/NewContact/newContact";
+import AboutSection from "./components/NewAboutUs/newAbout";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
       <Route path="/donation" element={<Donation />} />
       <Route path="/professorlist" element={<ProfessorList />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/newcontact" element={<ContactSection />} />
+      <Route path="/newabout" element={<AboutSection />} />
+
       {/* <Route path="/*" element={<NotFound />} /> */}
     </Routes>
   );
