@@ -1,54 +1,78 @@
+import { useState,useEffect } from "react";
+import { Card } from "antd";
+import { Descriptions, Statistic } from "antd";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Card } from "antd";
-import React from "react";
-import {Descriptions, Statistic} from "antd";
 import "./ProfessorList.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-const Professor = () => (
-    <Container>
-      <Row className="text-center">
-        <Col
-          xs={12}
-          md={3}
-          style={{
-            backgroundColor: "rgba(228, 175, 43, 0.88)",
-            padding: "20px",
-          }}
-        >
-          {" "}
-          <Card className="ant-card-head py-0" title="Quality" bordered={false}>
-            <Statistic title="Overall Rating" value={93} suffix="/ 100" />
-          </Card>
-        </Col>
-        <Col
-          xs={12}
-          md={9}
-          style={{ backgroundColor: "#dcdcdc", padding: "20px" }}
-        >
-          <Row className="site-card-border-less-wrapper">
-            <Descriptions size="small">
-              <Descriptions.Item
-                label="Professor"
-                style={{ fontSize: "30px", fontWeight: "bold" }}
-              >
-                Jonathon
-              </Descriptions.Item>
-              <Descriptions.Item label="Department">Business</Descriptions.Item>
-              <Descriptions.Item label="University">
-                Conestoga College
-              </Descriptions.Item>
-              <Descriptions.Item label="Would take again">
-                50%
-              </Descriptions.Item>
-              <Descriptions.Item label="Level of difficulty">
-                4.1
-              </Descriptions.Item>
-            </Descriptions>
-          </Row>
-        </Col>
+
+const ProfessorInformation = ({data}) => {
+
+  const {firstName,lastName,department:{name}, institution:{universityname,location},
+  overallRating,recomendationRate,rateTeaching,_id } = data
+  return (
+    <Link to={`/professor/${_id}`}>
+  <Container>
+  <Row className="text-center">
+    <Col
+      xs={12}
+      md={3}
+      style={{
+        backgroundColor: "rgba(228, 175, 43, 0.88)",
+        padding: "20px",
+      }}
+    >
+      {" "}
+      <Card className="ant-card-head py-0" title="Quality" bordered={false}>
+        <Statistic title="Overall Rating" value={overallRating} suffix="/ 5" />
+      </Card>
+    </Col>
+    <Col
+      xs={12}
+      md={9}
+      style={{ backgroundColor: "#dcdcdc", padding: "20px" }}
+    >
+      <Row className="site-card-border-less-wrapper">
+        <Descriptions size="small">
+          <Descriptions.Item
+            label="Professor"
+            style={{ fontSize: "30px", fontWeight: "bold", textTransform:'capitalize' }}
+          >
+            {firstName} {lastName}
+          </Descriptions.Item>
+          <Descriptions.Item label="Department">{name}</Descriptions.Item>
+          <Descriptions.Item label="University">
+          {universityname}
+          </Descriptions.Item>
+          <Descriptions.Item label="Would take again">
+            {recomendationRate}
+          </Descriptions.Item>
+          <Descriptions.Item label="Level of difficulty">
+            {rateTeaching}
+          </Descriptions.Item>
+          <Descriptions.Item label="Location">
+            {location}
+          </Descriptions.Item>
+        </Descriptions>
       </Row>
-    </Container>
-);
+    </Col>
+  </Row>
+</Container>
+</Link>
+)}
+
+const Professor = () => {
+  const [professorList,setProfessorList] = useState([])
+
+  useEffect(()=>{
+    axios.get('http://localhost:3600/user?isStudent=false').then(data=>setProfessorList(data?.data))
+  },[])
+
+  return (
+    professorList.map((data,key) =><ProfessorInformation key={key} data={data}/>)
+  )
+};
 export default Professor;

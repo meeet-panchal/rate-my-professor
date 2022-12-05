@@ -19,12 +19,12 @@ const NavigationalRoutes = () => {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/donation" element={<Donation />} />
             <Route path="/register" element={<RegisterationForm />} />
-            <Route path="/ratings" element={<Ratings />} />
             <Route element={<ProtectedRoutes />}>
-                <Route element={<StudentRoutes/>}>
+                <Route element={<StudentRoutes />}>
                     <Route path="/universities" element={<Universities />} />
                     <Route path="/professors" element={<ProfessorList />} />
-                    <Route path="/professorlist" element={<Professor />} />
+                    <Route path="/professor/:id" element={<Professor />} />
+                    <Route path="/rateProfessor/:id" element={<Ratings />} />
                 </Route>
             </Route>
             {/* <Route path="/ratings" element={<Ratings />} /> */}
