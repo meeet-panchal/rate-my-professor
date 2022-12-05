@@ -33,6 +33,12 @@ const MainHeader = () => {
             <Link to="/donation">DONATION</Link>
           </li>
 
+          <li>
+            <Link to="/newcontact">NEWCONTACT</Link>
+          </li>
+          <li>
+            <Link to="/newabout">NEWABOUT</Link>
+          </li>
         </ul>
       </div>
     </header>
