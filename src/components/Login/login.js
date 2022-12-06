@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { Button, Form, Input } from "antd";
 
@@ -36,6 +37,7 @@ const tailFormItemLayout = {
 
 const Login = () => {
   const [form] = Form.useForm();
+  const navigate = useNavigate();
 
   const onFinish = async (values) => {
     const { email, password } = values;
@@ -45,10 +47,7 @@ const Login = () => {
       password: password,
     };
     await axios
-      .post("http://localhost:3600/login", registerationDetails, {
-        withCredentials: true,
-        "Access-Control-Allow-Credentials": true,
-      })
+      .post("http://localhost:3600/login", registerationDetails)
       .then((userData) => {
         const {
           data: {
@@ -59,7 +58,18 @@ const Login = () => {
         localStorage.setItem("token", JSON.stringify(accessToken));
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
         toast.success(message);
+        setTimeout(() => {
+          navigate("/");
+        }, 1500);
       });
+/*       fetch("http://localhost:3600/login",{
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(registerationDetails)
+      }) */
   };
 
   return (
