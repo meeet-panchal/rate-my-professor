@@ -1,17 +1,21 @@
-import { BsFillEmojiLaughingFill, BsFillEmojiNeutralFill, BsFillEmojiFrownFill, BsFillEmojiHeartEyesFill, BsFillEmojiAngryFill } from "react-icons/bs";
+import {
+  BsFillEmojiLaughingFill,
+  BsFillEmojiNeutralFill,
+  BsFillEmojiFrownFill,
+  BsFillEmojiHeartEyesFill,
+  BsFillEmojiAngryFill,
+} from "react-icons/bs";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Paragraph, H1, H3 } from "../../styleComponents";
 
-
 const Home = () => {
   return (
     <div className="App">
       <section className="header">
-
         <div className="text-box">
-          <H1>.
+          <H1>
             <BsFillEmojiLaughingFill></BsFillEmojiLaughingFill>{" "}
             <BsFillEmojiNeutralFill></BsFillEmojiNeutralFill>{" "}
             <BsFillEmojiFrownFill></BsFillEmojiFrownFill>{" "}
@@ -98,6 +102,39 @@ const Home = () => {
           </Col>
         </Row>
 
+        <H1>Get In Touch</H1>
+        <div className="contact-section">
+          <div className="contact-form">
+            <form className="contact" action="" method="post">
+              <input
+                type="text"
+                name="name"
+                className="text-box1"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                className="text-box1"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <input
+                type="submit"
+                name="submit"
+                className="send-btn"
+                value="Send"
+              />
+            </form>
+          </div>
+        </div>
       </Container>
     </div>
   );

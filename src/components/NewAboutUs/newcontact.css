@@ -1,0 +1,164 @@
+.Montserrat-text {
+  font-family: Montserrat;
+}
+
+.OpenSans-text {
+  font-family: "Open Sans";
+}
+
+.main-content {
+  margin-top: 4.375rem;
+  margin-left: 3.062rem;
+}
+
+/* fonts */
+.f10 {
+  font-size: 0.625rem;
+}
+
+.f12 {
+  font-size: 0.75rem;
+}
+.f14 {
+  font-size: 0.875rem;
+}
+.f16 {
+  font-size: 1rem;
+}
+
+.f18 {
+  font-size: 1.125rem;
+}
+.f20 {
+  font-size: 1.25rem;
+}
+.f24 {
+  font-size: 1.5rem;
+}
+.f30 {
+  font-size: 1.875rem;
+}
+
+.f52 {
+  font-size: 3.25rem;
+}
+
+/* font-weights*/
+
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+
+/* text-colors */
+
+.text-black-1 {
+  color: #1c1c1e;
+}
+
+.text-black-2 {
+  color: #48484a;
+}
+
+.text-black-3 {
+  color: #3a3a3c;
+}
+
+.text-dark-black {
+  color: #000000;
+}
+.text-light-grey {
+  color: #8e8e93;
+}
+
+.text-grey-2 {
+  color: #636366;
+}
+
+.text-orange {
+  color: #ff5107;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+/* buttons */
+
+.filled-button {
+  flex-grow: 0;
+  border-radius: 130px;
+  background-color: #f47421;
+}
+.unfilled-button {
+  width: 220px;
+  height: 40px;
+  flex-grow: 0;
+  border-radius: 130px;
+  border: solid 1px #f47421;
+  background-color: #ffffff;
+}
+
+.login-banner-text {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+
+.login-input-box {
+  width: 25rem;
+}
+
+.ed-check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: solid 1px #cedbe7 !important;
+  background-color: #f2f2f7 !important;
+}
+
+.sidenav-bar {
+  width: 260px;
+  margin-top: 4.375rem;
+  box-shadow: 6px 4px 12px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.sidebar-item img {
+  width: 20px;
+  height: 20px;
+}
+
+.class-boxes {
+  height: 250px;
+  border-radius: 10px;
+  border: solid 1px #d1d1d6;
+  background-color: #ffffff;
+}
+
+.upcoming-box {
+  height: 723px;
+  border-radius: 12px;
+  border: solid 1px #d1d1d6;
+  background-color: #ffffff;
+}
+
+.edoptim-logo {
+  width: 115px;
+  height: 43px;
+}
+
+.subjects {
+  border-bottom: 1px solid #c7c7cc;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-input-box {
+    width: 20rem;
+  }
+}

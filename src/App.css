@@ -5,8 +5,10 @@
 .header {
   width: 100%;
   min-height: 70vh;
-  background-image: linear-gradient(rgba(44, 41, 41, 0.752),
-      rgba(44, 41, 41, 0.692)),
+  background-image: linear-gradient(
+      rgba(44, 41, 41, 0.752),
+      rgba(44, 41, 41, 0.692)
+    ),
     url("/public/images/rate.jpg");
   background-size: cover;
   position: relative;
@@ -22,20 +24,20 @@
 }
 
 #part1 {
-  color: #EFF5F5;
+  color: #eff5f5;
   font-size: 45px;
   margin-left: 10px;
 }
 
 #part2 {
-  color: #EB6440;
+  color: #eb6440;
   font-weight: bold;
   font-size: 45px;
 }
 
 nav .logo .fa {
   display: contents;
-  color: #EB6440;
+  color: #eb6440;
   font-size: 40px;
   padding-right: 20px;
 }
@@ -66,7 +68,6 @@ nav {
 
 .navigation ul li a {
   background: white;
-
   -webkit-background-clip: text;
   /* Make the text fill color value transparent so the masked background color comes through */
   -webkit-text-fill-color: transparent;
@@ -79,21 +80,21 @@ nav {
   content: "";
   width: 0%;
   height: 2px;
-  background: #EB6440;
+  background: #eb6440;
   display: block;
   margin: auto;
 }
 
-p {
+/* p {
   color: black;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 15px;
   margin-top: 30px;
 
   text-align: center;
   font-weight: bold;
   margin-bottom: 30px;
-}
+} */
 
 .navigation ul li:hover::after {
   width: 100%;
@@ -102,7 +103,7 @@ p {
 
 .text-box {
   width: 90%;
-  color: #EFF5F5;
+  color: #eff5f5;
   position: absolute;
   top: 70%;
   left: 50%;
@@ -116,7 +117,7 @@ p {
 .visit-btn {
   display: inline-block;
   text-decoration: none;
-  color: #EFF5F5;
+  color: #eff5f5;
   border: 1px solid #fff;
   padding: 12px 34px;
   background-color: #588e89;
@@ -128,7 +129,7 @@ p {
 
 .visit-btn:hover {
   border: 1px solid #497174;
-  background: #EB6440;
+  background: #eb6440;
   transition: 1s;
   color: #497174;
 }
@@ -161,7 +162,7 @@ nav .fa {
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -174,16 +175,12 @@ body {
 }
 
 img {
-  
   max-width: 100%;
   height: 60vh;
   background-size: cover;
   position: relative;
   border-radius: 4px;
   margin-bottom: 20px;
- 
-  
-
 }
 
 .slideshow-container {
@@ -191,7 +188,6 @@ img {
   position: relative;
   margin: auto;
   margin-top: 50px;
-
 }
 
 *,
@@ -323,11 +319,10 @@ img {
 }
 
 .contact-form .send-btn {
-
   margin-left: 290px;
   display: inline-block;
   text-decoration: none;
-  color: #EFF5F5;
+  color: #eff5f5;
   border: 1px solid #fff;
   padding: 12px 34px;
   background-color: #588e89;
@@ -335,12 +330,11 @@ img {
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
-
 }
 
 .contact-form .send-btn:hover {
   border: 1px solid #497174;
-  background: #EB6440;
+  background: #eb6440;
   transition: 1s;
   color: #497174;
 }
@@ -355,8 +349,6 @@ img {
   font-family: Open Sans;
 }
 
-
-
 .footer-distributed {
   background:  #003b49;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -365,6 +357,10 @@ img {
   text-align: left;
   font: bold 16px sans-serif;
   padding: 55px 50px;
+
+  position: absolute;
+  right: 0;
+  left: 0;
 }
 
 .footer-distributed .footer-left,
@@ -389,7 +385,7 @@ img {
 }
 
 .footer-distributed h3 span {
-  color: #EB6440;
+  color: #eb6440;
   font-weight: bold;
 }
 
@@ -458,7 +454,6 @@ img {
 .footer-distributed .footer-center p a {
   color: #f2c75c;
   text-decoration: none;
-  ;
 }
 
 .footer-distributed .footer-links a:before {
@@ -466,7 +461,7 @@ img {
   font-weight: 300;
   font-size: 20px;
   left: 0;
-  color: #EFF5F5;
+  color: #eff5f5;
   display: inline-block;
   padding-right: 5px;
 }
@@ -521,7 +516,6 @@ img {
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
-
   .footer-distributed {
     font: bold 14px sans-serif;
   }
@@ -538,9 +532,7 @@ img {
   .footer-distributed .footer-center i {
     margin-left: 0;
   }
-
 }
-
 
 @media only screen and (max-width: 768px) {
   .text-box h1 {
@@ -632,7 +624,7 @@ img {
 }
 
 @media only screen and (max-width: 1200px) {
-  .img{
+  .img {
     height: auto;
   }
 }

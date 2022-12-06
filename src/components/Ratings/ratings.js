@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import { Carousel } from "antd";
+import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import "./ratings.css";
 import { H1 } from "../../styleComponents.js";
 import { Button, Checkbox, Col, Form, Input, Radio, Rate, Row, Select, Switch } from "antd";
+import axios from "axios";
+import toast from "react-hot-toast";
 const { TextArea } = Input;
 
 const contentStyle = {
@@ -39,23 +42,22 @@ const formItemLayout = {
 const Ratings = () => {
 
   const [form] = Form.useForm();
+  let { id } = useParams();
 
   const professorTags = ["Tough Grader", "Participation Matters", "Group Projects",
     "Lots Of Homework", "Gives Good Feedback", "Clear Grading Criteria", "Accessible Outside Class", "Graded By Few Things", "Respected"]
 
   const onFinish = async (values) => {
-/*     const { overallRating, tags, rateTeaching,
-      isAttendanceMandatory, isRecommended, isCourseTakenForCredit,
-      isTextbookPreferred, feedback, examTypes } = values */
+    /*     const { overallRating, tags, rateTeaching,
+          isAttendanceMandatory, isRecommended, isCourseTakenForCredit,
+          isTextbookPreferred, feedback, examTypes } = values */
 
-    const ratingGivenBy = "JSON.parse()"
-    const ratingGivenFor = ""
+    const token = JSON.parse(localStorage.getItem('token'))
 
-    const ratingsFeedback = {...values,ratingGivenBy,ratingGivenFor};
-    // const response = await registrationApi.post(
-    //   "/professors",
-    //   professorDetails
-    // );
+    const ratingsFeedback = { ...values, ratingGivenFor: id };
+    axios.post("http://localhost:3600/saveRatings", ratingsFeedback, { headers: { Authorization: `Bearer ${token}` } }).then(data => {
+      toast.success("Feedback has been submitted!")
+    })
     console.log("Received values of form: ", values);
     // console.log("values passed from the form", response);
   };
