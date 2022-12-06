@@ -1,4 +1,5 @@
-// import { BsGithub, BsTwitter, BsLinkedin, BsFacebook } from "react-icons/bs";
+import { BsGithub, BsTwitter, BsLinkedin, BsFacebook } from "react-icons/bs";
+
 const Footer = () => {
     return (
         <footer className="footer-distributed">
@@ -31,14 +32,15 @@ const Footer = () => {
                     We are a bunch of developers who wanted to contribute back to where we came from.
                 </p>
 
-{/*                 <div className="footer-icons">
+             <div className="footer-icons">
+             <a href="https://google.com" target="_blank" rel="noreferrer"><i className="fa fa-facebook"></i><BsFacebook/></a>             
 
-                    <a href="#"><i className="fa fa-facebook"></i><BsFacebook></BsFacebook></a>
+               {/*      <a href="#"><i className="fa fa-facebook"></i><BsFacebook></BsFacebook></a>
                     <a href="#"><i className="fa fa-twitter"></i><BsTwitter></BsTwitter></a>
                     <a href="#"><i className="fa fa-linkedin"></i><BsLinkedin></BsLinkedin></a>
-                    <a href="#"><i className="fa fa-github"></i><BsGithub></BsGithub></a>
+                    <a href="#"><i className="fa fa-github"></i><BsGithub></BsGithub></a> */}
 
-                </div> */}
+                </div> 
 
             </div>
 

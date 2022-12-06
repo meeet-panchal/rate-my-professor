@@ -11,12 +11,12 @@ const Home = () => {
       <section className="header">
 
         <div className="text-box">
-          <H1>
+          <H1>.
             <BsFillEmojiLaughingFill></BsFillEmojiLaughingFill>{" "}
             <BsFillEmojiNeutralFill></BsFillEmojiNeutralFill>{" "}
             <BsFillEmojiFrownFill></BsFillEmojiFrownFill>{" "}
             <BsFillEmojiHeartEyesFill></BsFillEmojiHeartEyesFill>{" "}
-            <BsFillEmojiAngryFill></BsFillEmojiAngryFill>
+            <BsFillEmojiAngryFill></BsFillEmojiAngryFill>.
           </H1>
 
           <Paragraph>
@@ -44,7 +44,7 @@ const Home = () => {
         <Row>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/prof1.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/prof1.jpg"} alt="prof" style={{ width: "100%" }} />
               <div className="container">
                 <H3>Jane Doe</H3>
                 <p className="title">Information Technology</p>
@@ -62,7 +62,7 @@ const Home = () => {
           </Col>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/prof2.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/prof2.jpg"} alt="prof" style={{ width: "100%" }} />
               <div className="container">
                 <H3>Mike Ross</H3>
                 <p className="title">Civil & Architecture</p>
@@ -80,7 +80,7 @@ const Home = () => {
           </Col>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/prof3.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/prof3.jpg"} alt="prof" style={{ width: "100%" }} />
               <div className="container">
                 <H3>John Doe</H3>
                 <p className="title">Fluid Chemical</p>
