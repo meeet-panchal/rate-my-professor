@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import { Carousel } from "antd";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import "./ratings.css";
 import { H1 } from "../../styleComponents.js";
 import { Button, Checkbox, Col, Form, Input, Radio, Rate, Row, Select, Switch } from "antd";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 const { TextArea } = Input;
 
 const contentStyle = {
@@ -43,6 +43,8 @@ const Ratings = () => {
 
   const [form] = Form.useForm();
   let { id } = useParams();
+  const navigate = useNavigate();
+
 
   const professorTags = ["Tough Grader", "Participation Matters", "Group Projects",
     "Lots Of Homework", "Gives Good Feedback", "Clear Grading Criteria", "Accessible Outside Class", "Graded By Few Things", "Respected"]
@@ -57,6 +59,9 @@ const Ratings = () => {
     const ratingsFeedback = { ...values, ratingGivenFor: id };
     axios.post("http://localhost:3600/saveRatings", ratingsFeedback, { headers: { Authorization: `Bearer ${token}` } }).then(data => {
       toast.success("Feedback has been submitted!")
+      setTimeout(() => {
+        navigate(`/professor/${id}`)
+      }, 1000);
     })
     console.log("Received values of form: ", values);
     // console.log("values passed from the form", response);
@@ -64,6 +69,7 @@ const Ratings = () => {
 
   return (
     <div className="App">
+      <Toaster/>
       <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className="bg-image1" />

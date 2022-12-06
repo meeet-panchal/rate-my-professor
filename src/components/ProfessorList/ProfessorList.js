@@ -27,7 +27,7 @@ const ProfessorInformation = ({data}) => {
     >
       {" "}
       <Card className="ant-card-head py-0" title="Quality" bordered={false}>
-        <Statistic title="Overall Rating" value={overallRating} suffix="/ 5" />
+        <Statistic title="Overall Rating" value={parseFloat(overallRating).toFixed(1)} suffix="/ 5" />
       </Card>
     </Col>
     <Col

@@ -37,7 +37,7 @@ const Professor = () => {
               bordered={false}
             >
               <h6>Professor at {professorDetails?.institution?.universityname}</h6>
-              <Statistic title="Overall Rating" value={parseInt(professorDetails?.overallRating)} suffix="/ 5" />
+              <Statistic title="Overall Rating" value={parseFloat(professorDetails?.overallRating).toFixed(1)} suffix="/ 5" />
 
               <Row>
                 <Col>
@@ -110,8 +110,8 @@ const Professor = () => {
                 <p>{userId === _id && <Link to={`/editRating/${data?._id}`}>Edit</Link>}</p>
               </Descriptions.Item>
               <PageHeader
-                className="site-page-header p-0"
-                title={`USER${_id.slice(0,4)}`}
+                className="site-page-header p-0"                
+                title={`user${_id.slice(0,4)}`}
                 subTitle={`Overall Rating ${overallRating}/5`}
                 extra={[
                   <Button key="1" type="primary">
