@@ -24,8 +24,8 @@ export const StudentRoutes = ()=>{
     const location = useLocation();
 
     useEffect(()=>{
-        const {isStudent} = JSON.parse(localStorage.getItem("userInfo"))
-        isStudent?setUserType(true):setUserType(false)
+        const {isStudent} = JSON.parse(localStorage.getItem("userInfo")) || {}
+        isStudent ? setUserType(true) : setUserType(false)
     },[location])
     
     return isStudentUser ? <Outlet/> : <Navigate to="/" replace state={{from:location}} />

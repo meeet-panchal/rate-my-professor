@@ -95,12 +95,11 @@ const Professor = () => {
 
         {Object.keys(ratingsDetails).length > 0 && ratingsDetails?.data?.map(data => {
           const {feedback,
-            ratingGivenBy:{institution:{universityname},department:{name},_id},
+            ratingGivenBy:{institution:{universityname},_id},
             ratingGivenOn,isAttendanceMandatory,tags,examTypes,rateTeaching,
             isRecommended,isTextbookPreferred,isCourseTakenForCredit,overallRating
            } = data
-          //  const tagsArray = tags[0].split("'").filter(e=>e.length > 3)
-          //  const examFeedbackArray = examTypes[0].split("'").filter(e=>e.length > 3)
+
           return (
             <Row
               className="site-card-border-less-wrapper mt-5"
@@ -135,12 +134,11 @@ const Professor = () => {
                   <Descriptions.Item label="Credit">{isCourseTakenForCredit ? "Yes" : "No"}</Descriptions.Item>
 
                   <Descriptions.Item label="Remarks">
-                    
+                  {tags.map(tag=>(<p style={{border :"20px soild black",backgroundColor:"white",color:"black",margin:"2px",textAlign:'center',padding:"5px",borderRadius:"5px"}}>{tag}</p>))}
                   </Descriptions.Item>
                   <Descriptions.Item label="Type of exams">
-                    {examTypes.map(type=>(<p>{type}</p>))}
+                    {examTypes.map(type=>(<p style={{border :"20px soild black",backgroundColor:"white",color:"black",margin:"2px",textAlign:'center',padding:"5px",borderRadius:"5px"}}>{type}</p>))}
                   </Descriptions.Item>
-                  {tags.map(tag=>(<p>{tag}</p>))}
                   <Descriptions.Item
                     className="rounded p-3"
                     style={{ color: "#e4af2be0", backgroundColor: "#e4af2be0" }}

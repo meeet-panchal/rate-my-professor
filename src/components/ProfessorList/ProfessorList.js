@@ -48,10 +48,10 @@ const ProfessorInformation = ({data}) => {
           {universityname}
           </Descriptions.Item>
           <Descriptions.Item label="Would take again">
-            {recomendationRate}
+            {recomendationRate}%
           </Descriptions.Item>
           <Descriptions.Item label="Level of difficulty">
-            {rateTeaching}
+            {parseFloat(rateTeaching).toFixed(1)}
           </Descriptions.Item>
           <Descriptions.Item label="Location">
             {location}

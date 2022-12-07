@@ -9,6 +9,7 @@ import AboutSection from "../NewAboutUs/newAbout";
 import ContactSection from "../NewContact/newContact";
 import Donation from "../Donation";
 import Login from "../Login/login";
+import EditRating from "../EditRating";
 import ProtectedRoutes, { StudentRoutes } from "../ProtectedRoutes";
 
 const NavigationalRoutes = () => {
@@ -26,6 +27,7 @@ const NavigationalRoutes = () => {
                     <Route path="/professors" element={<ProfessorList />} />
                     <Route path="/professor/:id" element={<Professor />} />
                     <Route path="/rateProfessor/:id" element={<Ratings />} />
+                    <Route path="/editRating/:id" element={<EditRating />} />
                 </Route>
             </Route>
             {/* <Route path="/ratings" element={<Ratings />} /> */}

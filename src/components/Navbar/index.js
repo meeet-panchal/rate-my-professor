@@ -10,7 +10,7 @@ const NavigationBar = () => {
 
     useEffect(() => {
         const authToken = localStorage.getItem("token")
-        const userInfo = JSON.parse(localStorage.getItem("userInfo"))
+        const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {}
 
         if (authToken !== null) {
             setLoggedInStatus(true)
@@ -55,7 +55,7 @@ const NavigationBar = () => {
                             <Link to="/donation">DONATE</Link>
                         </li>
                         {loggedInStatus && <li>
-                           Hey {userData?.firstName} {userData.lastName}
+                           Hey {userData?.firstName} {userData?.lastName}
                         </li>}
                         {loggedInStatus ? (<li>
                             <Link to="/logout">LOGOUT</Link>

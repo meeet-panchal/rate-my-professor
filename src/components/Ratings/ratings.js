@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import { Carousel } from "antd";
-import { useParams,useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import "./ratings.css";
 import { H1 } from "../../styleComponents.js";
@@ -69,7 +69,7 @@ const Ratings = () => {
 
   return (
     <div className="App">
-      <Toaster/>
+      <Toaster />
       <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className="bg-image1" />
@@ -149,9 +149,9 @@ const Ratings = () => {
               },
             ]}
           >
-            <Radio.Group>
-              <Radio value="true">Yes</Radio>
-              <Radio value="false">No</Radio>
+            <Radio.Group optionType="button" buttonStyle="solid">
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
@@ -165,9 +165,9 @@ const Ratings = () => {
               },
             ]}
           >
-            <Radio.Group>
-              <Radio value="true">Yes</Radio>
-              <Radio value="false">No</Radio>
+            <Radio.Group optionType="button" buttonStyle="solid">
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
@@ -181,9 +181,9 @@ const Ratings = () => {
               },
             ]}
           >
-            <Radio.Group>
-              <Radio value="true">Yes</Radio>
-              <Radio value="false">No</Radio>
+            <Radio.Group optionType="button" buttonStyle="solid">
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
