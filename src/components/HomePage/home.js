@@ -15,12 +15,12 @@ const Home = () => {
     <div className="App">
       <section className="header">
         <div className="text-box">
-          <H1 style={{ display: "flex", justifyContent: "center" }}>
+          <H1>
             <BsFillEmojiLaughingFill></BsFillEmojiLaughingFill>{" "}
             <BsFillEmojiNeutralFill></BsFillEmojiNeutralFill>{" "}
             <BsFillEmojiFrownFill></BsFillEmojiFrownFill>{" "}
             <BsFillEmojiHeartEyesFill></BsFillEmojiHeartEyesFill>{" "}
-            <BsFillEmojiAngryFill></BsFillEmojiAngryFill>
+            <BsFillEmojiAngryFill></BsFillEmojiAngryFill>.
           </H1>
 
           <Paragraph>
@@ -48,7 +48,7 @@ const Home = () => {
         <Row>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/prof1.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/prof1.jpg"} alt="prof" style={{ width: "100%" }} />
               <div className="container">
                 <H3>Jane Doe</H3>
                 <p className="title">Information Technology</p>
@@ -66,7 +66,7 @@ const Home = () => {
           </Col>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/prof2.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/prof2.jpg"} alt="prof" style={{ width: "100%" }} />
               <div className="container">
                 <H3>Mike Ross</H3>
                 <p className="title">Civil & Architecture</p>
@@ -84,7 +84,7 @@ const Home = () => {
           </Col>
           <Col xs={12} md={6} lg={4}>
             <div className="card">
-              <img src={"/images/prof3.jpg"} style={{ width: "100%" }} />
+              <img src={"/images/prof3.jpg"} alt="prof" style={{ width: "100%" }} />
               <div className="container">
                 <H3>John Doe</H3>
                 <p className="title">Fluid Chemical</p>
@@ -101,77 +101,6 @@ const Home = () => {
             </div>
           </Col>
         </Row>
-
-        {/* <div className="row">
-    <div className="column">
-      <div className="card">
-        <img src={"/images/prof1.jpg"} style={{ width: "100%" }} />
-        <div className="container">
-          <H3>Jane Doe</H3>
-          <p className="title">Information Technology</p>
-          <p>
-            Expertise:database systems; data quality; data privacy; data
-            analytics; information extraction; text mining.ssociate
-            Professor in the Department of Computing and Software, Faculty
-            of Engineering. Her research interests are broadly in the area
-            of data management, with a focus on data quality, data
-            analytics, data privacy, text mining, and information
-            extraction. She has worked at IBM Global Services.
-          </p>
-          <p>Jane@gmail.com</p>
-          <p>
-            <button className="button">Give Ratings</button>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div className="column">
-      <div className="card">
-        <img src={"/images/prof2.jpg"} style={{ width: "100%" }} />
-        <div className="container">
-          <H3>Mike Ross</H3>
-          <p className="title">Civil & Architecture</p>
-          <p>
-            I am an assistant professor at McMaster University. Before
-            joining McMaster University, I was a Principal Researcher at
-            Huawei Technologies Canada, Co., Ltd. During 2015~2018, I
-            successfully led 7+ research projects as a Postdoctoral Fellow
-            at Simon Fraser University. I obtained my Ph.D. degree in
-            Computer Science from University of Chinese Academy of
-            Sciences in June 2015.
-          </p>
-          <p>mike@gmail.com</p>
-          <p>
-            <button className="button">Give Ratings</button>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div className="column">
-      <div className="card">
-        <img src={"/images/prof3.jpg"} style={{ width: "100%" }} />
-        <div className="container">
-          <H3>John Doe</H3>
-          <p className="title">Fluid Chemical</p>
-          <p>
-            Currently, my focus is on the development of scalable
-            resilient systems that can manage data and processing complex
-            transactions, while providing strong guarantees toward users
-            in the presence of faulty behavior (e.g., hardware failures,
-            software failures, and malicious attacks). Furthermore, I work
-            on database theory, on semi-structured data with a main focus
-            on graph databases.
-          </p>
-          <p>john@gmail.com</p>
-          <p>
-            <button className="button">Give Ratings</button>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div> */}
 
         <H1>Get In Touch</H1>
         <div className="contact-section">

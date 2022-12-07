@@ -1,3 +1,14 @@
 .ant-card-head {
   font-size: 35px !important;
 }
+
+.professor-details p {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-top: 30px;
+
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
