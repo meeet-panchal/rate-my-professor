@@ -42,8 +42,8 @@ const EditRating = () => {
 
         axios.put(`http://localhost:3600/editRating/${id}`, values, { headers: { Authorization: `Bearer ${token}` } })
             .then(data => {
-                const {data:{data:{ratingGivenFor}}} = data
-                toast.success("Feedback has been submitted!")
+                const { data: { data: { ratingGivenFor }, message } } = data
+                toast.success(message)
 
                 setTimeout(() => {
                     navigate(`/professor/${ratingGivenFor}`)
