@@ -62,14 +62,6 @@ const Login = () => {
           navigate("/");
         }, 1500);
       });
-    /*       fetch("http://localhost:3600/login",{
-        method: "POST",
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(registerationDetails)
-      }) */
   };
 
   return (

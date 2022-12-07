@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -17,21 +18,41 @@ const Professor = () => {
 
   let { id } = useParams();
 
-  useEffect(() => {
+  const getDetails = ()=>{
     axios
       .get(`http://localhost:3600/user?id=${id}&isStudent=false`)
       .then((data) => setProfessorList(data?.data[0]));
     axios
       .get(`http://localhost:3600/ratings?id=${id}`)
       .then((data) => setRatingsDetails(data?.data));
+  }
+
+  useEffect(() => {
+    getDetails()
   }, []);
 
   const userId = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))._id
     : null;
 
+    
+    
+    const deleteRating = (id)=>{
+
+    const token = JSON.parse(localStorage.getItem('token'))
+    
+    axios.delete(`http://localhost:3600/deleteRating/${id}`,{ headers: { Authorization: `Bearer ${token}` } })
+    .then(data =>{
+      const {data:{message}} = data
+      getDetails();
+      toast.success(message)
+    }
+    )
+  }
+
   return (
     <section class="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
+        <Toaster />
       <Container>
         <Row className="text-center bg-light py-4 professor-details">
           <Col xs={12} md={3}>
@@ -46,7 +67,7 @@ const Professor = () => {
               </h6>
               <Statistic
                 title="Overall Rating"
-                value={parseInt(professorDetails?.overallRating)}
+                value={parseInt(professorDetails?.overallRating).toFixed(1)}
                 suffix="/ 5"
               />
 
@@ -123,7 +144,6 @@ const Professor = () => {
               feedback,
               ratingGivenBy: {
                 institution: { universityname },
-                department: { name },
                 _id,
               },
               ratingGivenOn,
@@ -136,19 +156,21 @@ const Professor = () => {
               isCourseTakenForCredit,
               overallRating,
             } = data;
-            //  const tagsArray = tags[0].split("'").filter(e=>e.length > 3)
-            //  const examFeedbackArray = examTypes[0].split("'").filter(e=>e.length > 3)
+
             return (
               <Row
                 className="site-card-border-less-wrapper mt-5"
                 style={{ backgroundColor: "#dcdcdc", padding: "20px" }}
               >
-                <Descriptions.Item label="Attendance">
-                  <p>
+                <Descriptions.Item label="Attendance">  
                     {userId === _id && (
-                      <Link to={`/editRating/${data?._id}`}>Edit</Link>
+                      <Button type="primary">
+                        <Link style={{textDecoration:"none"}} to={`/editRating/${data?._id}`}>Edit</Link>
+                      </Button>
                     )}
-                  </p>
+                    {userId === _id && (
+                      <Button onClick={()=>deleteRating(data?._id)} type="primary" danger >Delete</Button>
+                    )}
                 </Descriptions.Item>
                 <PageHeader
                   className="site-page-header p-0"
