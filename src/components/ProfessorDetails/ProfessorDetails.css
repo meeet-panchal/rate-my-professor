@@ -1,14 +1,40 @@
-.ant-card-head {
+.ant-card-head-title {
   font-size: 35px !important;
+  font-weight: 500 !important;
+  background-color: #003b49 !important;
+  color: white !important;
+  border-radius: 5px;
 }
-
 .professor-details p {
-  color: black;
+  color: white;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   margin-top: 30px;
-
   text-align: center;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 30px;
 }
+.ant-statistic-title {
+  color: rgba(0, 0, 0) !important;
+  font-size: 15px;
+}
+.ant-statistic-content-value,
+.ant-statistic-content-suffix {
+  font-size: 35px;
+  font-weight: 600 !important;
+}
+.ant-progress-text {
+  color: white !important;
+}
+
+.ant-descriptions-item-content {
+  font-weight: 600;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  padding: 0px !important;
+}
+
+/* .ant-progress-bg {
+  background-color: #7aff39 !important;
+} */

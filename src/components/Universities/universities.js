@@ -1,19 +1,8 @@
 import { Carousel } from "antd";
 import Container from "react-bootstrap/Container";
-import MainHeader from "../MainHeader";
 import "./universities.css";
 import "../../App.css";
-import {
-
-  Paragraph,
-  H1,
-  UL,
-  LI,
-  A,
-  H2,
-  H3,
-  H4,
-} from "../../styleComponents.js";
+import { Paragraph, H1, UL, LI, A, H2, H3, H4 } from "../../styleComponents.js";
 import {
   BsGithub,
   BsTwitter,
@@ -97,131 +86,138 @@ const Universities = () => {
     <div className="App">
       <Carousel autoplay>
         <div>
-          <h3 style={contentStyle} className="uni1">
-            
-          </h3>
+          <h3 style={contentStyle} className="uni1"></h3>
         </div>
         <div>
-          <h3 style={contentStyle} className="uni2">
-            
-          </h3>
+          <h3 style={contentStyle} className="uni2"></h3>
         </div>
         <div>
-          <h3 style={contentStyle} className="uni3">
-            
-          </h3>
+          <h3 style={contentStyle} className="uni3"></h3>
         </div>
         <div>
-          <h3 style={contentStyle} className="uni4">
-        
-          </h3>
+          <h3 style={contentStyle} className="uni4"></h3>
         </div>
       </Carousel>
-<Container>
-      <Form
-        name="validate_other"
-        {...formItemLayout}
-        onFinish={onFinish}
-        initialValues={{
-          "input-number": 3,
-          "checkbox-group": ["A", "B"],
-          rate: 3.5,
-        }}
-      >
-        <H1>Rate your University</H1>
-
-       
-
-        <Form.Item
-          name="University"
-          label="University"
-          hasFeedback
-          rules={[
-            {
-              required: true,
-              message: "Please select your University!",
-            },
-          ]}
-        >
-          <Select placeholder="Please select University">
-            <Option value="university of waterloo">
-              University of Waterloo
-            </Option>
-            <Option value="conestoga college">Conestoga College</Option>
-          </Select>
-        </Form.Item>
-
-        <Form.Item name="rate" label="Rate">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Reputation">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Location">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Opportunities">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="ReputaFacilities and common areastion">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Internet">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Food">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Club">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Social">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Happiness">
-          <Rate />
-        </Form.Item>
-
-        <Form.Item  className="star" name="rate" label="Safety" rules={[
-            {
-              required: true,
-              message: "Please select your tags!",
-              type: "array",
-            },
-          ]}>
-          <Rate />
-        </Form.Item>
-
-        
-         
-
-        <Form.Item name="feedback" label="Feedback">
-          <TextArea rows={4} placeholder="maxLength is 6" maxLength={6} />
-        </Form.Item>
-
-        <Form.Item
-          wrapperCol={{
-            span: 12,
-            offset: 6,
+      <Container>
+        <Form
+          name="validate_other"
+          {...formItemLayout}
+          onFinish={onFinish}
+          initialValues={{
+            "input-number": 3,
+            "checkbox-group": ["A", "B"],
+            rate: 3.5,
           }}
         >
-          <Button type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
+          <H1>Rate your University</H1>
+
+          <Form.Item
+            name="University"
+            label="University"
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: "Please select your University!",
+              },
+            ]}
+          >
+            <Select placeholder="Please select University">
+              <Option value="university of waterloo">
+                University of Waterloo
+              </Option>
+              <Option value="conestoga college">Conestoga College</Option>
+            </Select>
+          </Form.Item>
+
+          <Form.Item name="rate" label="Rate">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Reputation">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Location">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Opportunities">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item
+            className="star"
+            name="rate"
+            label="ReputaFacilities and common areastion"
+          >
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Internet">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Food">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Club">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Social">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item className="star" name="rate" label="Happiness">
+            <Rate />
+          </Form.Item>
+
+          <Form.Item
+            className="star"
+            name="rate"
+            label="Safety"
+            rules={[
+              {
+                required: true,
+                message: "Please select your tags!",
+                type: "array",
+              },
+            ]}
+          >
+            <Rate />
+          </Form.Item>
+
+          <Form.Item name="feedback" label="Feedback">
+            <TextArea rows={4} placeholder="maxLength is 6" maxLength={6} />
+          </Form.Item>
+
+          <Form.Item
+            wrapperCol={{
+              span: 12,
+              offset: 6,
+            }}
+            className="text-center"
+          >
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{
+                backgroundColor: "rgb(0, 59, 73)",
+                border: "1px solid rgb(0, 59, 73)",
+                color: "#f2c75c",
+                borderRadius: "5px",
+                fontSize: "15px",
+                fontWeight: "bold",
+              }}
+            >
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
       </Container>
     </div>
-    
   );
 };
 

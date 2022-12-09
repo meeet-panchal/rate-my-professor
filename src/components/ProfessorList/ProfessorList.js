@@ -50,7 +50,7 @@ const ProfessorInformation = ({ data }) => {
               md={9}
               style={{ backgroundColor: "#dcdcdc", padding: "20px" }}
             >
-              <Row className="site-card-border-less-wrapper">
+              <Row className="">
                 <Descriptions size="small">
                   <Descriptions.Item
                     label="Professor"
