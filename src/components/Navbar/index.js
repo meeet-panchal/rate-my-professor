@@ -1,10 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation,useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const NavigationBar = () => {
   const location = useLocation();
   const [loggedInStatus, setLoggedInStatus] = useState(true);
   const [userData, setUserData] = useState({});
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const authToken = localStorage.getItem("token");
@@ -18,6 +20,11 @@ const NavigationBar = () => {
       setUserData({});
     }
   }, [location]);
+
+  const logoutUser = ()=>{
+    localStorage.clear()
+    navigate("/")
+  }
 
   return (
     <nav className="navigation" id="navigation">
@@ -55,8 +62,8 @@ const NavigationBar = () => {
               </li>
             )}
             {loggedInStatus ? (
-              <li>
-                <Link to="/logout">LOGOUT</Link>
+              <li className="user-name" onClick={logoutUser}>
+                LOGOUT
               </li>
             ) : (
               <li>

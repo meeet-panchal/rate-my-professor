@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import { Card } from "antd";
 import React, { useState, useEffect } from "react";
 import { Progress } from "antd";
-import { Button, Descriptions, PageHeader, Statistic, Tag } from "antd";
+import { Button, Descriptions, PageHeader, Statistic } from "antd";
 import DescriptionsItem from "antd/lib/descriptions/Item";
 import { Divider } from "antd";
 import "./ProfessorDetails.css";
@@ -79,7 +79,7 @@ const Professor = () => {
               <Statistic
                 className="my-4"
                 title="Overall Rating"
-                value={parseInt(professorDetails?.overallRating).toFixed(1)}
+                value={parseFloat(professorDetails?.overallRating).toFixed(1)}
                 suffix="/ 5"
               />
               <Button
@@ -110,20 +110,16 @@ const Professor = () => {
           >
             <DescriptionsItem>
               {" "}
-              <div
-                style={
-                  {
-                    // width: 570,
-                  }
-                }
-              >
+              <div>
                 {Object.keys(ratingsDetails).length > 0 &&
                   ratingsDetails?.ratingDistribution.map((rating) => {
+
                     const ratingsCount = ratingsDetails?.data.length;
+
                     const { _id, totalRatings } = rating;
-                    const percentage = parseInt(
-                      (totalRatings / ratingsCount) * 100
-                    );
+
+                    const percentage = parseFloat((totalRatings / ratingsCount) * 100).toFixed(1);
+
                     return (
                       <>
                         <p className="m-0 text-start text-white">
@@ -133,6 +129,7 @@ const Professor = () => {
                       </>
                     );
                   })}
+
               </div>
             </DescriptionsItem>
             <Row className="mt-4">
@@ -149,10 +146,10 @@ const Professor = () => {
                 <Divider type="vertical" />
                 <Progress
                   type="circle"
-                  percent={parseInt((professorDetails?.rateTeaching / 5) * 100)}
+                  percent={parseFloat((professorDetails?.rateTeaching / 5) * 100).toFixed(1)}
                   width={80}
                 />{" "}
-                <p>Level of Difficulty</p>
+                <p>Teaching Performance</p>
               </Col>
             </Row>
           </Col>

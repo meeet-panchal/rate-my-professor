@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "../HomePage/home";
-import Universities from "../Universities/universities";
+import UniversityForm from "../Universities/universities";
+import UniversityDetails from '../University';
 import ProfessorList from "../ProfessorList/ProfessorList";
 import Professor from "../ProfessorDetails/ProfessorDetails";
 import Ratings from "../Ratings/ratings";
@@ -10,6 +11,7 @@ import ContactSection from "../NewContact/newContact";
 import Donation from "../Donation";
 import Login from "../Login/login";
 import EditRating from "../EditRating";
+import UniversityList from '../UniversityList'
 import ProtectedRoutes, { StudentRoutes } from "../ProtectedRoutes";
 
 const NavigationalRoutes = () => {
@@ -23,11 +25,14 @@ const NavigationalRoutes = () => {
             <Route path="/ratings" element={<Ratings />} />
             <Route element={<ProtectedRoutes />}>
                 <Route element={<StudentRoutes />}>
-                    <Route path="/universities" element={<Universities />} />
                     <Route path="/professors" element={<ProfessorList />} />
                     <Route path="/professor/:id" element={<Professor />} />
                     <Route path="/rateProfessor/:id" element={<Ratings />} />
                     <Route path="/editRating/:id" element={<EditRating />} />
+                    <Route path="/universities" element={<UniversityList/>}/>
+                    <Route path="/university/:id" element={<UniversityDetails/>}/>
+                    <Route path="/rateUniversity/:id" element={<UniversityForm/>} />
+                    {/* <Route path="/editUniversityRating/:id" element={} /> */}
                 </Route>
             </Route>
             {/* <Route path="/ratings" element={<Ratings />} /> */}

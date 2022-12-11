@@ -4,23 +4,21 @@ import { Descriptions, Statistic } from "antd";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "./ProfessorList.css";
+import "../ProfessorList/ProfessorList.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const ProfessorInformation = ({ data }) => {
+const UniversityInformation = ({ data }) => {
   const {
-    firstName,
-    lastName,
-    department: { name },
-    institution: { universityname, location },
+    location,
+    universityname,
     overallRating,
-    recomendationRate,
-    rateTeaching,
+    reputation,
+    facilities,
     _id,
   } = data;
   return (
-    <Link to={`/professor/${_id}`}>
+    <Link to={`/university/${_id}`}>
       <section class="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
         <Container>
           <Row className="text-center">
@@ -41,7 +39,7 @@ const ProfessorInformation = ({ data }) => {
                 <Statistic
                   title="Overall Rating"
                   value={overallRating}
-                  suffix="/ 5"
+                  suffix=" / 5"
                 />
               </Card>
             </Col>
@@ -53,29 +51,23 @@ const ProfessorInformation = ({ data }) => {
               <Row className="">
                 <Descriptions size="small">
                   <Descriptions.Item
-                    label="Professor"
+                    label="Name"
                     style={{
                       fontSize: "30px",
                       fontWeight: "bold",
                       textTransform: "capitalize",
                     }}
                   >
-                    {firstName} {lastName}
-                  </Descriptions.Item>
-                  <Descriptions.Item label="Department">
-                    {name}
-                  </Descriptions.Item>
-                  <Descriptions.Item label="University">
                     {universityname}
-                  </Descriptions.Item>
-                  <Descriptions.Item label="Would take again">
-                    {recomendationRate}%
-                  </Descriptions.Item>
-                  <Descriptions.Item label="Teaching Feedback">
-                    {parseFloat(rateTeaching).toFixed(1)}/5
                   </Descriptions.Item>
                   <Descriptions.Item label="Location">
                     {location}
+                  </Descriptions.Item>
+                  <Descriptions.Item label="Reputation">
+                    {reputation} / 5
+                  </Descriptions.Item>
+                  <Descriptions.Item label="Facilities">
+                    {facilities} / 5
                   </Descriptions.Item>
                 </Descriptions>
               </Row>
@@ -87,17 +79,17 @@ const ProfessorInformation = ({ data }) => {
   );
 };
 
-const Professor = () => {
-  const [professorList, setProfessorList] = useState([]);
+const Universities = () => {
+  const [universityList, setUniversityList] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3600/user?isStudent=false")
-      .then((data) => setProfessorList(data?.data));
+      .get("http://localhost:3600/university")
+      .then((data) => setUniversityList(data?.data));
   }, []);
 
-  return professorList.map((data, key) => (
-    <ProfessorInformation key={key} data={data} />
+  return universityList.map((data, key) => (
+    <UniversityInformation key={key} data={data} />
   ));
 };
-export default Professor;
+export default Universities;
