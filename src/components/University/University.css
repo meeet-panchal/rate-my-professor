@@ -1,0 +1,10 @@
+.descriptions-header .ant-descriptions-item-label {
+  color: white;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+
+.descriptions-header .ant-descriptions-item-content {
+  color: #e9ecef;
+  font-size: 20px;
+}
