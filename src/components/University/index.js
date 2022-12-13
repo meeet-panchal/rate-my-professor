@@ -68,11 +68,7 @@ const University = () => {
             style={{ backgroundColor: "#f2c75c" }}
           >
             {" "}
-            <Card
-              className="ant-card-head py-0"
-              title={`${universityDetails?.universityname}`}
-              bordered={false}
-            >
+            <Card className="ant-card-head py-0" bordered={false}>
               <h6 className="my-4" style={{ fontSize: "25px" }}>
                 Location : <br></br> {universityDetails?.location}
               </h6>
@@ -108,29 +104,12 @@ const University = () => {
             className="py-4"
             style={{ backgroundColor: "#003b49" }}
           >
+            <Card
+              className="ant-card-head py-0"
+              title={`${universityDetails?.universityname}`}
+              bordered={false}
+            ></Card>
             <Descriptions size="small" className="descriptions-header">
-              <DescriptionsItem>
-                {" "}
-                <div>
-                  {/*                                 {Object.keys(ratingsDetails).length > 0 &&
-                                    ratingsDetails?.ratingDistribution.map((rating) => {
-                                        const ratingsCount = ratingsDetails?.data.length;
-                                        const { _id, totalRatings } = rating;
-                                        const percentage = parseFloat(
-                                            (totalRatings / ratingsCount) * 100
-                                        ).toFixed(1);
-                                        return (
-                                            <>
-                                                <p className="m-0 text-start text-white">
-                                                    {_id} Star {`(${totalRatings})`}
-                                                </p>{" "}
-                                                <Progress percent={percentage} />
-                                            </>
-                                        );
-                                    })} */}
-                </div>
-              </DescriptionsItem>
-
               <Descriptions.Item label="Reputation">
                 {universityDetails?.reputation} / 5
               </Descriptions.Item>
@@ -177,6 +156,7 @@ const University = () => {
               overallRating,
               ratingGivenOn,
               ratingGivenBy,
+              facilities,
               _id,
             } = data;
 
@@ -235,48 +215,45 @@ const University = () => {
                   ]}
                 >
                   <Descriptions size="small">
-                    {/*                                         <Descriptions.Item label="University">
-                                            {universityname}
-                                        </Descriptions.Item>
-                                        <Descriptions.Item label="Attendance">
-                                            {isAttendanceMandatory ? "Yes" : "No"}
-                                        </Descriptions.Item>
-                                        <Descriptions.Item label="Would you recommend?">
-                                            {isRecommended ? "Yes" : "No"}
-                                        </Descriptions.Item>
-                                        <Descriptions.Item label="Teaching">
-                                            {rateTeaching}/5
-                                        </Descriptions.Item>
-                                        <Descriptions.Item label="Textbook">
-                                            {isTextbookPreferred ? "Yes" : "No"}
-                                        </Descriptions.Item>
-                                        <Descriptions.Item label="Credit">
-                                            {isCourseTakenForCredit ? "Yes" : "No"}
-                                        </Descriptions.Item> */}
-
-                    <Descriptions.Item label="Remarks"></Descriptions.Item>
-                    <Descriptions.Item label="Type of exams">
-                      <Collapse className="p-0" defaultActiveKey={["0"]} ghost>
-                        <Panel header="Click here" key="1">
-                          {/*    {examTypes.map((type) => (
-                                                        <p>{type}</p>
-                                                    ))} */}
-                        </Panel>
-                      </Collapse>
+                    <Descriptions.Item label="Reputation">
+                      {universityDetails?.reputation} / 5
                     </Descriptions.Item>
 
-                    <Descriptions.Item label="Tags">
-                      <Collapse className="p-0" defaultActiveKey={["0"]} ghost>
-                        <Panel header="Click here" key="1">
-                          {/*  {tags.map((tag) => (
-                                                        <p>{tag}</p>
-                                                    ))} */}
-                        </Panel>
-                      </Collapse>
+                    <Descriptions.Item label="Opportunities">
+                      {universityDetails?.opportunities} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Facilities">
+                      {universityDetails?.facilities} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Internet">
+                      {universityDetails?.internet} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Food">
+                      {universityDetails?.food} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Club">
+                      {universityDetails?.club} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Social">
+                      {universityDetails?.social} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Happiness">
+                      {universityDetails?.happiness} / 5
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Safety">
+                      {universityDetails?.safety} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item
                       className="rounded p-3"
+                      label="Feedback"
                       style={{
                         color: "#e4af2be0",
                         backgroundColor: "#e4af2be0",

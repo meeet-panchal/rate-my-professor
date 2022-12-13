@@ -44,20 +44,6 @@ const Universities = () => {
 
   return (
     <div className="App">
-      {/*       <Carousel autoplay>
-        <div>
-          <h3 style={contentStyle} className="uni1"></h3>
-        </div>
-        <div>
-          <h3 style={contentStyle} className="uni2"></h3>
-        </div>
-        <div>
-          <h3 style={contentStyle} className="uni3"></h3>
-        </div>
-        <div>
-          <h3 style={contentStyle} className="uni4"></h3>
-        </div>
-      </Carousel> */}
       <Container>
         <Form name="validate_other" {...formItemLayout} onFinish={onFinish}>
           <H1>Rate {universityDetails?.universityname}</H1>
