@@ -1,11 +1,10 @@
-import {useState,useEffect} from 'react'
-import {useNavigate} from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
-import { Button,Form, Input, Select } from "antd";
-import axios from 'axios'
-import toast, { Toaster } from 'react-hot-toast';
+import { Button, Form, Input, Select } from "antd";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import registrationApi from "../../api/registrationApi";
-
 
 const { Option } = Select;
 
@@ -42,16 +41,19 @@ const tailFormItemLayout = {
 
 const RegisterationForm = () => {
   const [form] = Form.useForm();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [department,setDepartment] = useState([])
-  const [institution,setInstitution] = useState([])
+  const [department, setDepartment] = useState([]);
+  const [institution, setInstitution] = useState([]);
 
-  useEffect(()=>{
-    axios.get('http://localhost:3600/institutions').then(data=>setInstitution(data?.data?.data))
-    axios.get('http://localhost:3600/departments').then(data=>setDepartment(data?.data?.data))
-  },[])
-
+  useEffect(() => {
+    axios
+      .get("http://localhost:3600/institutions")
+      .then((data) => setInstitution(data?.data?.data));
+    axios
+      .get("http://localhost:3600/departments")
+      .then((data) => setDepartment(data?.data?.data));
+  }, []);
 
   const onFinish = async (values) => {
     const {
@@ -62,7 +64,7 @@ const RegisterationForm = () => {
       isStudent,
       lastName,
       password,
-      year
+      year,
     } = values;
 
     const registerationDetails = {
@@ -73,34 +75,34 @@ const RegisterationForm = () => {
       isStudent: isStudent,
       lastName: lastName,
       password: password,
-      year
+      year,
     };
-    registrationApi.post(
-      "/register",
-      registerationDetails
-    ).then(data=>{
-      if(data?.status === 201){
-        toast.success(data?.data?.message)
-        setTimeout(() => {navigate('/login')}, 2000);
-      }
-    }).catch(error=>{
-      toast.error(error?.response?.data?.message)
-    });
+    registrationApi
+      .post("/register", registerationDetails)
+      .then((data) => {
+        if (data?.status === 201) {
+          toast.success(data?.data?.message);
+          setTimeout(() => {
+            navigate("/login");
+          }, 2000);
+        }
+      })
+      .catch((error) => {
+        toast.error(error?.response?.data?.message);
+      });
   };
 
   return (
     <>
       <div className="App">
-      <Toaster/>
+        <Toaster />
         <Container>
           <Form
             {...formItemLayout}
             form={form}
             name="register"
             onFinish={onFinish}
-            initialValues={{
-
-            }}
+            initialValues={{}}
             scrollToFirstError
           >
             <Form.Item
@@ -201,7 +203,9 @@ const RegisterationForm = () => {
               ]}
             >
               <Select placeholder="Select your Type">
-              {institution.map(data=>(<Option value={data?._id}>{data?.universityname}</Option>))}
+                {institution.map((data) => (
+                  <Option value={data?._id}>{data?.universityname}</Option>
+                ))}
               </Select>
             </Form.Item>
 
@@ -216,7 +220,9 @@ const RegisterationForm = () => {
               ]}
             >
               <Select placeholder="Select your Type">
-              {department.map(data=>(<Option value={data?._id}>{data?.name}</Option>))}
+                {department.map((data) => (
+                  <Option value={data?._id}>{data?.name}</Option>
+                ))}
               </Select>
             </Form.Item>
 
@@ -246,11 +252,22 @@ const RegisterationForm = () => {
                 },
               ]}
             >
-              <Input type='number' />
+              <Input type="number" />
             </Form.Item>
 
             <Form.Item {...tailFormItemLayout}>
-              <Button  className="visit-btn" type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{
+                  backgroundColor: "rgb(0, 59, 73)",
+                  border: "1px solid rgb(0, 59, 73)",
+                  color: "#ffffff",
+                  borderRadius: "5px",
+                  fontSize: "15px",
+                  fontWeight: "bold",
+                }}
+              >
                 Register
               </Button>
             </Form.Item>

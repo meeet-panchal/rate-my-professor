@@ -111,7 +111,18 @@ const Login = () => {
                 <Input.Password />
               </Form.Item>
               <Form.Item {...tailFormItemLayout}>
-                <Button className="visit-btn" type="primary" htmlType="submit">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  style={{
+                    backgroundColor: "rgb(0, 59, 73)",
+                    border: "1px solid rgb(0, 59, 73)",
+                    color: "#ffffff",
+                    borderRadius: "5px",
+                    fontSize: "15px",
+                    fontWeight: "bold",
+                  }}
+                >
                   Login
                 </Button>
               </Form.Item>

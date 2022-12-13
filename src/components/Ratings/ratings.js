@@ -323,7 +323,7 @@ const Ratings = () => {
               style={{
                 backgroundColor: "rgb(0, 59, 73)",
                 border: "1px solid rgb(0, 59, 73)",
-                color: "#f2c75c",
+                color: "#ffffff",
                 borderRadius: "5px",
                 fontSize: "15px",
                 fontWeight: "bold",
