@@ -213,8 +213,9 @@ const Universities = () => {
             span: 12,
             offset: 6,
           }}
+          className=" d-flex justify-content-center"
         >
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" className="btnuni">
             Submit
           </Button>
         </Form.Item>

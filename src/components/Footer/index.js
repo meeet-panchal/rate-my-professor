@@ -33,7 +33,10 @@ const Footer = () => {
                 </p>
 
              <div className="footer-icons">
-             <a href="https://google.com" target="_blank" rel="noreferrer"><i className="fa fa-facebook"></i><BsFacebook/></a>             
+             <a href="https://facebook.com" target="_blank" aria-label="facebook" rel="noreferrer"><BsFacebook/></a>
+             <a href="https://twitter.com" target="_blank" aria-label="twitter" rel="noreferrer"><BsTwitter /></a>
+             <a href="https://linkedin.com" target="_blank" aria-label="linkedin" rel="noreferrer"><BsLinkedin/></a>
+             <a href="https://github.com" target="_blank" aria-label="github" rel="noreferrer"><BsGithub/></a>             
 
                {/*      <a href="#"><i className="fa fa-facebook"></i><BsFacebook></BsFacebook></a>
                     <a href="#"><i className="fa fa-twitter"></i><BsTwitter></BsTwitter></a>

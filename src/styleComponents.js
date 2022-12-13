@@ -20,18 +20,12 @@ text-align: center;
 `
 
 export const Paragraph = styled.p`
-font-family:'Roboto', sans-serif;
-font-size: 15px;
-margin-top: 30px;
-color: #EFF5F5;
-text-align: center;
-font-weight: bold;
-margin-bottom: 30px;
+https://conestogac.zoom.us/j/97946376846?pwd=SDI4elpXRzlyTUJiRW9BMFkwUEFnZz09
 `
 
 export const H1 = styled.h1`
 /* Set the background color */
-background: #497174;
+background: #003b49;
 /* Mask the color to the text, and remove the rest  */
 -webkit-background-clip: text;
 /* Make the text fill color value transparent so the masked background color comes through */
