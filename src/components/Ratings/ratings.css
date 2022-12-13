@@ -24,3 +24,13 @@
   text-align: center;
   font-size: bold;
 }
+.ixMkUi {
+  background: rgb(0, 59, 73);
+}
+
+.ant-form-item-label > label {
+  font-weight: bold;
+}
+.ant-form-item-control-input-content {
+  font-weight: 500;
+}

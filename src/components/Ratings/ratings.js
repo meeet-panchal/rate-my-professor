@@ -1,12 +1,23 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 import { Carousel } from "antd";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import "./ratings.css";
 import { H1 } from "../../styleComponents.js";
-import { Button, Checkbox, Col, Form, Input, Radio, Rate, Row, Select, Switch } from "antd";
+import {
+  Button,
+  Checkbox,
+  Col,
+  Form,
+  Input,
+  Radio,
+  Rate,
+  Row,
+  Select,
+  Switch,
+} from "antd";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 const { TextArea } = Input;
 
 const contentStyle = {
@@ -40,30 +51,47 @@ const formItemLayout = {
 };
 
 const Ratings = () => {
-
   const [form] = Form.useForm();
   let { id } = useParams();
+  const navigate = useNavigate();
 
-  const professorTags = ["Tough Grader", "Participation Matters", "Group Projects",
-    "Lots Of Homework", "Gives Good Feedback", "Clear Grading Criteria", "Accessible Outside Class", "Graded By Few Things", "Respected"]
+  const professorTags = [
+    "Tough Grader",
+    "Participation Matters",
+    "Group Projects",
+    "Lots Of Homework",
+    "Gives Good Feedback",
+    "Clear Grading Criteria",
+    "Accessible Outside Class",
+    "Graded By Few Things",
+    "Respected",
+  ];
 
   const onFinish = async (values) => {
     /*     const { overallRating, tags, rateTeaching,
           isAttendanceMandatory, isRecommended, isCourseTakenForCredit,
           isTextbookPreferred, feedback, examTypes } = values */
 
-    const token = JSON.parse(localStorage.getItem('token'))
+    const token = JSON.parse(localStorage.getItem("token"));
 
     const ratingsFeedback = { ...values, ratingGivenFor: id };
-    axios.post("http://localhost:3600/saveRatings", ratingsFeedback, { headers: { Authorization: `Bearer ${token}` } }).then(data => {
-      toast.success("Feedback has been submitted!")
-    })
+    axios
+      .post("http://localhost:3600/saveRatings", ratingsFeedback, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((data) => {
+        toast.success("Feedback has been submitted!");
+        setTimeout(() => {
+          navigate(`/professor/${id}`);
+        }, 1000);
+      });
     console.log("Received values of form: ", values);
     // console.log("values passed from the form", response);
   };
 
   return (
     <div className="App">
+      <Toaster />
       <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className="bg-image1" />
@@ -85,7 +113,7 @@ const Ratings = () => {
           name="validate_other"
           onFinish={onFinish}
         >
-          <H1>Rate your Professor</H1>
+          <H1 style={{ color: "#003b49" }}>Rate your Professor</H1>
           <Form.Item
             name="overallRating"
             label="Overall Rating"
@@ -96,7 +124,7 @@ const Ratings = () => {
               },
             ]}
           >
-            <Rate style={{ backgroundColor: 'white', padding: ' 0 2rem' }} />
+            <Rate style={{ backgroundColor: "white", padding: " 0 2rem" }} />
           </Form.Item>
 
           <Form.Item
@@ -114,9 +142,9 @@ const Ratings = () => {
               mode="multiple"
               placeholder="Please select tags for your professor"
             >
-              {
-                professorTags.map(tag => (<Option value={tag}>{tag}</Option>))
-              }
+              {professorTags.map((tag) => (
+                <Option value={tag}>{tag}</Option>
+              ))}
             </Select>
           </Form.Item>
 
@@ -130,7 +158,7 @@ const Ratings = () => {
               },
             ]}
           >
-            <Rate style={{ backgroundColor: 'white', padding: ' 0 2em' }} />
+            <Rate style={{ backgroundColor: "white", padding: " 0 2em" }} />
           </Form.Item>
 
           <Form.Item
@@ -143,9 +171,9 @@ const Ratings = () => {
               },
             ]}
           >
-            <Radio.Group>
-              <Radio value="true">Yes</Radio>
-              <Radio value="false">No</Radio>
+            <Radio.Group optionType="button" buttonStyle="solid">
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
@@ -159,9 +187,9 @@ const Ratings = () => {
               },
             ]}
           >
-            <Radio.Group>
-              <Radio value="true">Yes</Radio>
-              <Radio value="false">No</Radio>
+            <Radio.Group optionType="button" buttonStyle="solid">
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
@@ -175,9 +203,9 @@ const Ratings = () => {
               },
             ]}
           >
-            <Radio.Group>
-              <Radio value="true">Yes</Radio>
-              <Radio value="false">No</Radio>
+            <Radio.Group optionType="button" buttonStyle="solid">
+              <Radio value={true}>Yes</Radio>
+              <Radio value={false}>No</Radio>
             </Radio.Group>
           </Form.Item>
 
@@ -205,7 +233,11 @@ const Ratings = () => {
               },
             ]}
           >
-            <TextArea rows={4} placeholder="Your comments on professor" maxLength={500} />
+            <TextArea
+              rows={4}
+              placeholder="Your comments on professor"
+              maxLength={500}
+            />
           </Form.Item>
 
           <Form.Item
@@ -289,10 +321,12 @@ const Ratings = () => {
               type="primary"
               htmlType="submit"
               style={{
-                width: "20vw",
-                backgroundColor: "#198754",
-                border: "1px solid #198754",
+                backgroundColor: "rgb(0, 59, 73)",
+                border: "1px solid rgb(0, 59, 73)",
+                color: "#f2c75c",
                 borderRadius: "5px",
+                fontSize: "15px",
+                fontWeight: "bold",
               }}
             >
               Submit

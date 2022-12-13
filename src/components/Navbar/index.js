@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation,useNavigate } from 'react-router-dom'
 import { useState, useEffect,useRef } from 'react'
 import { BiMenu, BiWindowClose } from "react-icons/bi";
 
@@ -8,22 +8,28 @@ const NavigationBar = () => {
     const location = useLocation();
     const [loggedInStatus, setLoggedInStatus] = useState(true)
     const [userData, setUserData] = useState({})
+    const navigate = useNavigate()
     let nav = useRef()
 
-    useEffect(() => {
-        const authToken = localStorage.getItem("token")
-        const userInfo = JSON.parse(localStorage.getItem("userInfo"))
+  useEffect(() => {
+    const authToken = localStorage.getItem("token");
+    const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
 
-        if (authToken !== null) {
-            setLoggedInStatus(true)
-            setUserData(userInfo)
-        } else {
-            setLoggedInStatus(false)
-            setUserData({})
-        }
+    if (authToken !== null) {
+      setLoggedInStatus(true);
+      setUserData(userInfo);
+    } else {
+      setLoggedInStatus(false);
+      setUserData({});
+    }
+  }, [location]);
 
-    }, [location])
+  const logoutUser = ()=>{
+    localStorage.clear()
+    navigate("/")
+  }
 
+ 
 
     const showmenu = (e) => {nav.current.style.right = "0px"  
     console.log(e.target)}

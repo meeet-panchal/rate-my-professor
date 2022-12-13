@@ -1,15 +1,19 @@
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Card } from "antd";
 import React, { useState, useEffect } from "react";
 import { Progress } from "antd";
-import { Button, Descriptions, PageHeader, Statistic, Tag } from "antd";
+import { Button, Descriptions, PageHeader, Statistic } from "antd";
 import DescriptionsItem from "antd/lib/descriptions/Item";
 import { Divider } from "antd";
 import "./ProfessorDetails.css";
+
+import { Collapse } from "antd";
+const { Panel } = Collapse;
 
 const Professor = () => {
   const [professorDetails, setProfessorList] = useState([]);
@@ -17,103 +21,137 @@ const Professor = () => {
 
   let { id } = useParams();
 
-  useEffect(() => {
+  const getDetails = () => {
     axios
       .get(`http://localhost:3600/user?id=${id}&isStudent=false`)
       .then((data) => setProfessorList(data?.data[0]));
     axios
       .get(`http://localhost:3600/ratings?id=${id}`)
       .then((data) => setRatingsDetails(data?.data));
+  };
+
+  useEffect(() => {
+    getDetails();
   }, []);
 
   const userId = localStorage.getItem("userInfo")
     ? JSON.parse(localStorage.getItem("userInfo"))._id
     : null;
 
+  const deleteRating = (id) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    axios
+      .delete(`http://localhost:3600/deleteRating/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((data) => {
+        const {
+          data: { message },
+        } = data;
+        getDetails();
+        toast.success(message);
+      });
+  };
+
   return (
     <section class="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
+      <Toaster />
       <Container>
         <Row className="text-center bg-light py-4 professor-details">
-          <Col xs={12} md={3}>
+          <Col
+            xs={12}
+            md={12}
+            lg={3}
+            className="py-4"
+            style={{ backgroundColor: "#f2c75c" }}
+          >
             {" "}
             <Card
               className="ant-card-head py-0"
               title={`${professorDetails?.firstName} ${professorDetails?.lastName}`}
               bordered={false}
             >
-              <h6>
-                Professor at {professorDetails?.institution?.universityname}
+              <h6 className="my-4" style={{ fontSize: "25px" }}>
+                Professor at <br></br>{" "}
+                {professorDetails?.institution?.universityname}
               </h6>
               <Statistic
+                className="my-4"
                 title="Overall Rating"
-                value={parseInt(professorDetails?.overallRating)}
+                value={parseFloat(professorDetails?.overallRating).toFixed(1)}
                 suffix="/ 5"
               />
-
-              <Row>
-                <Col>
-                  <Divider type="vertical" />
-                  <Progress
-                    type="circle"
-                    percent={professorDetails?.recomendationRate}
-                    width={80}
-                  />{" "}
-                  <p>Would take again?</p>
-                </Col>
-                <Col>
-                  <Divider type="vertical" />
-                  <Progress
-                    type="circle"
-                    percent={parseInt(
-                      (professorDetails?.rateTeaching / 5) * 100
-                    )}
-                    width={80}
-                  />{" "}
-                  <p>Level of Difficulty</p>
-                </Col>
-              </Row>
-
               <Button
                 type="primary"
                 htmlType="submit"
                 style={{
-                  width: "10vw",
-                  backgroundColor: "rgba(228, 175, 43, 0.88)",
-                  border: "1px solid rgba(228, 175, 43, 0.88)",
-                  color: "black",
+                  backgroundColor: "#003b49",
+                  border: "1px solid #003b49",
+                  color: "white",
                   borderRadius: "5px",
                 }}
               >
-                <Link to={`/rateProfessor/${id}`}>Rate Professor</Link>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/rateProfessor/${id}`}
+                >
+                  Rate Professor
+                </Link>
               </Button>
             </Card>
           </Col>
-          <Col xs={12} md={9}>
+          <Col
+            xs={12}
+            md={12}
+            lg={9}
+            className="py-4"
+            style={{ backgroundColor: "#003b49" }}
+          >
             <DescriptionsItem>
               {" "}
-              <div
-                style={{
-                  width: 570,
-                }}
-              >
+              <div>
                 {Object.keys(ratingsDetails).length > 0 &&
                   ratingsDetails?.ratingDistribution.map((rating) => {
+
                     const ratingsCount = ratingsDetails?.data.length;
+
                     const { _id, totalRatings } = rating;
-                    const percentage = parseInt(
-                      (totalRatings / ratingsCount) * 100
-                    );
+
+                    const percentage = parseFloat((totalRatings / ratingsCount) * 100).toFixed(1);
+
                     return (
                       <>
-                        <p className="m-0 text-start">
+                        <p className="m-0 text-start text-white">
                           {_id} Star {`(${totalRatings})`}
                         </p>{" "}
                         <Progress percent={percentage} />
                       </>
                     );
                   })}
+
               </div>
             </DescriptionsItem>
+            <Row className="mt-4">
+              <Col>
+                <Divider type="vertical" />
+                <Progress
+                  type="circle"
+                  percent={professorDetails?.recomendationRate}
+                  width={80}
+                />{" "}
+                <p>Would take again?</p>
+              </Col>
+              <Col>
+                <Divider type="vertical" />
+                <Progress
+                  type="circle"
+                  percent={parseFloat((professorDetails?.rateTeaching / 5) * 100).toFixed(1)}
+                  width={80}
+                />{" "}
+                <p>Teaching Performance</p>
+              </Col>
+            </Row>
           </Col>
         </Row>
 
@@ -123,7 +161,6 @@ const Professor = () => {
               feedback,
               ratingGivenBy: {
                 institution: { universityname },
-                department: { name },
                 _id,
               },
               ratingGivenOn,
@@ -136,20 +173,42 @@ const Professor = () => {
               isCourseTakenForCredit,
               overallRating,
             } = data;
-            //  const tagsArray = tags[0].split("'").filter(e=>e.length > 3)
-            //  const examFeedbackArray = examTypes[0].split("'").filter(e=>e.length > 3)
+
             return (
               <Row
                 className="site-card-border-less-wrapper mt-5"
                 style={{ backgroundColor: "#dcdcdc", padding: "20px" }}
               >
-                <Descriptions.Item label="Attendance">
-                  <p>
-                    {userId === _id && (
-                      <Link to={`/editRating/${data?._id}`}>Edit</Link>
-                    )}
-                  </p>
-                </Descriptions.Item>
+                <div className="d-flex justify-content-end edit-delete">
+                  {userId === _id && (
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to={`/editRating/${data?._id}`}
+                    >
+                      <i
+                        class="fa fa-edit fa-lg mx-2"
+                        style={{
+                          color: " rgb(0, 59, 73)",
+                          fontSize: "30px",
+                          fontWeight: 600,
+                        }}
+                      ></i>
+                    </Link>
+                  )}
+                  {userId === _id && (
+                    <Link onClick={() => deleteRating(data?._id)}>
+                      <i
+                        class="fa fa-trash fa-lg mx-2"
+                        style={{
+                          color: "#e41e1e",
+                          fontSize: "30px",
+                          fontWeight: 600,
+                        }}
+                      ></i>
+                    </Link>
+                  )}
+                </div>
+
                 <PageHeader
                   className="site-page-header p-0"
                   title={`USER${_id.slice(0, 4)}`}
@@ -190,13 +249,25 @@ const Professor = () => {
 
                     <Descriptions.Item label="Remarks"></Descriptions.Item>
                     <Descriptions.Item label="Type of exams">
-                      {examTypes.map((type) => (
-                        <p>{type}</p>
-                      ))}
+                      <Collapse className="p-0" defaultActiveKey={["0"]} ghost>
+                        <Panel header="Click here" key="1">
+                          {examTypes.map((type) => (
+                            <p>{type}</p>
+                          ))}
+                        </Panel>
+                      </Collapse>
                     </Descriptions.Item>
-                    {tags.map((tag) => (
-                      <p>{tag}</p>
-                    ))}
+
+                    <Descriptions.Item label="Tags">
+                      <Collapse className="p-0" defaultActiveKey={["0"]} ghost>
+                        <Panel header="Click here" key="1">
+                          {tags.map((tag) => (
+                            <p>{tag}</p>
+                          ))}
+                        </Panel>
+                      </Collapse>
+                    </Descriptions.Item>
+
                     <Descriptions.Item
                       className="rounded p-3"
                       style={{

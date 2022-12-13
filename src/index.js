@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+// import "font-awesome/css/font-awesome.min.css";
+
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -13,9 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 />;
 <link rel="canonical" href="https://ratemyprofessor.com/" />
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-      <App />
-);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
