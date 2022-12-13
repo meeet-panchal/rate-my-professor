@@ -1,12 +1,15 @@
-import { Link, useLocation,useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link, useLocation,useNavigate } from 'react-router-dom'
+import { useState, useEffect,useRef } from 'react'
+import { BiMenu, BiWindowClose } from "react-icons/bi";
+
+
 
 const NavigationBar = () => {
-  const location = useLocation();
-  const [loggedInStatus, setLoggedInStatus] = useState(true);
-  const [userData, setUserData] = useState({});
-
-  const navigate = useNavigate()
+    const location = useLocation();
+    const [loggedInStatus, setLoggedInStatus] = useState(true)
+    const [userData, setUserData] = useState({})
+    const navigate = useNavigate()
+    let nav = useRef()
 
   useEffect(() => {
     const authToken = localStorage.getItem("token");
@@ -26,61 +29,69 @@ const NavigationBar = () => {
     navigate("/")
   }
 
-  return (
-    <nav className="navigation" id="navigation">
-      <div className="logo">
-        <Link to="/">
-          <span id="part1">Rate My</span>
-          <span id="part2"> Professor</span>
-        </Link>
-      </div>
-      <header>
-        <div className="navigation" id="navigation">
-          <ul>
-            {loggedInStatus && userData?.isStudent && (
-              <>
-                <li>
-                  <Link to="/universities">UNIVERSITIES</Link>
-                </li>
-                <li>
-                  <Link to="/professors">PROFESSORS</Link>
-                </li>
-              </>
-            )}
-            <li>
-              <Link to="/contact">CONTACT US</Link>
-            </li>
-            <li>
-              <Link to="/about-us">ABOUT US</Link>
-            </li>
-            <li>
-              <Link to="/donation">DONATE</Link>
-            </li>
-            {loggedInStatus && (
-              <li className="user-name">
-                Hey {userData?.firstName} {userData?.lastName}
-              </li>
-            )}
-            {loggedInStatus ? (
-              <li className="user-name" onClick={logoutUser}>
-                LOGOUT
-              </li>
-            ) : (
-              <li>
-                <Link to="/login">LOGIN</Link>
-              </li>
-            )}
-            {!loggedInStatus && (
-              <li>
-                <Link to="/register">REGISTER</Link>
-              </li>
-            )}
-          </ul>
-        </div>
-      </header>
-      {/* <i className="fa fa-bars" onClick="showmenu()"></i> */}
-    </nav>
-  );
-};
+ 
 
-export default NavigationBar;
+    const showmenu = (e) => {nav.current.style.right = "0px"  
+    console.log(e.target)}
+
+    const hidemenu = (e) => {
+        nav.current.style.right = "-200px"
+        console.log(e.target)
+    }
+
+
+    return (
+      <section>
+     <nav>
+            <div className="logo">
+                <Link to="/">
+
+                    <span id="part1">Rate My</span>
+                    <span id="part2"> Professor</span>
+
+                </Link>
+            </div>
+          
+                <div className="navigation" id="navigation" ref={nav}>
+                <BiWindowClose onClick={hidemenu} className=""/>
+                    <ul>
+                        {loggedInStatus && userData?.isStudent && (
+                            <>
+                                <li>
+                                    <Link to="/universities">UNIVERSITIES</Link>
+                                </li>
+                                <li>
+                                    <Link to="/professors">PROFESSORS</Link>
+                                </li></>)}
+                        <li>
+                            <Link to="/contact">CONTACT US</Link>
+                        </li>
+                        <li>
+                            <Link to="/about-us">ABOUT US</Link>
+                        </li>
+                        <li>
+                            <Link to="/donation">DONATE</Link>
+                        </li>
+                        {loggedInStatus && <li style={{ color: "#fff" }}>
+                            Hey {userData?.firstName} {userData.lastName}
+                        </li>}
+                        {loggedInStatus ? (<li>
+                            <Link to="/logout">LOGOUT</Link>
+                        </li>) : (<li>
+                            <Link to="/login">LOGIN</Link>
+                        </li>)}
+                        {!loggedInStatus && (<li>
+                            <Link to="/register">REGISTER</Link>
+                        </li>)}
+                    </ul>
+                </div>
+           <div className='togglebtn'>
+            <BiMenu onClick={showmenu}/>
+            </div>
+            </nav>
+            </section>
+           
+    )
+}
+
+export default NavigationBar

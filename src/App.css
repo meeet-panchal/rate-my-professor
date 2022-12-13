@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Open Sans";
 }
 
 .header {
@@ -45,7 +46,6 @@ nav .logo .fa {
 nav a {
   text-decoration: none;
 }
-
 nav {
   display: flex;
   padding: 15px 30px;
@@ -91,16 +91,33 @@ nav {
   margin: auto;
 }
 
-/* p {
-  color: black;
-  font-family: "Roboto", sans-serif;
+.bannerpara{
+  font-family:'Roboto', sans-serif;
   font-size: 15px;
   margin-top: 30px;
-
+  color: white;
   text-align: center;
   font-weight: bold;
   margin-bottom: 30px;
-} */
+}
+.emoji{
+ 
+  color: white;
+  margin-top: 0 !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 160px;
+
+}
+p.para {
+  font-family:'Roboto', sans-serif;
+font-size: 15px;
+margin-top: 30px;
+color: black;
+text-align: center;
+font-weight: bold;
+margin-bottom: 30px;
+} 
 
 .navigation ul li:hover::after {
   width: 100%;
@@ -123,7 +140,7 @@ nav {
   color: #eff5f5;
   border: 1px solid #fff;
   padding: 12px 34px;
-  background-color: #588e89;
+  background-color: #003b49;
   position: relative;
   cursor: pointer;
   font-weight: bold;
@@ -131,7 +148,7 @@ nav {
 }
 
 .visit-btn:hover {
-  border: 1px solid #497174;
+  border: 1px solid #003b49;
   background: #eb6440;
   transition: 1s;
   color: #497174;
@@ -165,7 +182,7 @@ nav .fa {
 }
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans";
 }
 
 body {
@@ -177,14 +194,7 @@ body {
   display: none;
 }
 
-img {
-  max-width: 100%;
-  height: 60vh;
-  background-size: cover;
-  position: relative;
-  border-radius: 4px;
-  margin-bottom: 20px;
-}
+
 
 .slideshow-container {
   /* max-width: 1000px; */
@@ -206,12 +216,7 @@ img {
   padding: 0 8px;
 }
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
+
 
 .card {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
@@ -233,7 +238,7 @@ img {
 }
 
 .title {
-  color: #588e89;
+  color: #003b49;
   font-weight: bold;
 }
 
@@ -243,7 +248,7 @@ img {
   display: inline-block;
   padding: 8px;
   color: black;
-  background-color: #588e89;
+  background-color: #003b49;
   background-image: linear-gradient(90deg, #588e89, lightpink);
   text-align: center;
   cursor: pointer;
@@ -252,7 +257,7 @@ img {
 }
 
 .button:hover {
-  background-color: #588e89;
+  background-color: #003b49;
 }
 
 .contact-section {
@@ -302,7 +307,12 @@ img {
 .contact-form .text-box:first-child {
   margin-right: 1px;
 }
-
+.btnuni{
+  background-color:#eb6440!important;
+  color:  #ffffff!important;
+  border-color: #eb6440!important;
+  border-radius: 5px!important;
+}
 .contact-form textarea {
   background-color: black;
 
@@ -328,7 +338,7 @@ img {
   color: #eff5f5;
   border: 1px solid #fff;
   padding: 12px 34px;
-  background-color: #588e89;
+  background-color: #003b49;
   position: relative;
   cursor: pointer;
   font-weight: bold;
@@ -336,10 +346,10 @@ img {
 }
 
 .contact-form .send-btn:hover {
-  border: 1px solid #497174;
+  border: 1px solid #003b49;
   background: #eb6440;
   transition: 1s;
-  color: #497174;
+  color: #003b49;
 }
 
 .contact-map {
@@ -395,7 +405,7 @@ img {
 /* Footer links */
 
 .footer-distributed .footer-links {
-  color: #f2c75c;
+  color:white;
   margin: 20px 0 12px;
   padding: 0;
 }
@@ -409,7 +419,7 @@ img {
 }
 
 .footer-distributed .footer-company-name {
-  color: #f2c75c;
+  color:white;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
@@ -423,7 +433,7 @@ img {
 
 .footer-distributed .footer-center i {
   background-color: #003b49;
-  color: #f2c75c;
+  color:white;
   font-size: 25px;
   width: 38px;
   height: 38px;
@@ -441,7 +451,7 @@ img {
 
 .footer-distributed .footer-center p {
   display: inline-block;
-  color: #f2c75c;
+  color: white;
   font-weight: 400;
   vertical-align: middle;
   margin: 0;
@@ -455,7 +465,7 @@ img {
 }
 
 .footer-distributed .footer-center p a {
-  color: #f2c75c;
+  color: white;
   text-decoration: none;
 }
 
@@ -481,7 +491,7 @@ img {
 
 .footer-distributed .footer-company-about {
   line-height: 20px;
-  color: #f2c75c;
+  color: white;
   font-size: 13px;
   font-weight: normal;
   margin: 0;
@@ -489,7 +499,7 @@ img {
 
 .footer-distributed .footer-company-about span {
   display: block;
-  color: #f2c75c;
+  color: white;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -504,21 +514,54 @@ img {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  background-color: #33383b;
+ 
   border-radius: 2px;
 
   font-size: 20px;
-  color: #f2c75c;
+  color: white;
   text-align: center;
   line-height: 35px;
 
   margin-right: 3px;
   margin-bottom: 5px;
 }
-
+.navigation svg{
+  display: none;
+  color: #fff;
+}
+.togglebtn svg{
+  display: none;
+}
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
+ 
+
+  .navigation ul li {
+    display: block;
+   
+   
+}
+.navigation {
+    position: absolute;
+    background: #f44336;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    right: 1000px;
+    text-align: left;
+    z-index: 2;
+}
+nav .fa {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+nav .fa ul {
+    padding: 25px;
+}
   .footer-distributed {
     font: bold 14px sans-serif;
   }
@@ -538,36 +581,45 @@ img {
 }
 
 @media only screen and (max-width: 768px) {
+  #part1, #part2{
+    font-size: 20px;
+  }
   .text-box h1 {
     font-size: 20px;
   }
-
-  .navigation ul li {
+  #root svg{
+  font-size: 24px;
+    color: #fff;
     display: block;
   }
-
-  .navigation {
+ 
+  .navigation ul li {
+    display: block;
+  
+}
+.navigation ul li a {
+  font-size: 15px;
+}
+.navigation {
     position: absolute;
     background: #f44336;
-    height: 70vh;
+    height: auto;    
     width: 200px;
     top: 0;
     right: 1000px;
     text-align: left;
     z-index: 2;
-  }
-
-  nav .fa {
+}
+nav .fa {
     display: block;
     color: #fff;
     margin: 10px;
     font-size: 22px;
     cursor: pointer;
-  }
-
-  nav .fa ul {
+}
+nav .fa ul {
     padding: 25px;
-  }
+}
 
   .row {
     display: block;
@@ -594,40 +646,104 @@ img {
     width: 50px;
     height: 36px;
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .contact-section {
-    flex-direction: column;
-  }
-
-  .contact-info {
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  .contact-info,
-  .contact-form {
-    margin: 30px 50px;
-  }
-
-  .contact-form .text-box {
-    width: 100%;
-  }
-
-  .contact-form .send-btn:hover {
-    background: red;
-  }
-
-  .contact-form .send-btn {
-    margin: auto;
-    display: flex;
-    justify-content: center;
+  .chefs .row {
+    display: block;
   }
 }
 
-@media only screen and (max-width: 1200px) {
-  .img {
-    height: auto;
-  }
+
+
+
+
+.chefs .member {
+  text-align: center;
+  margin-bottom: 20px;
+  background: #343a40;
+  position: relative;
+  overflow: hidden;
+}
+
+.chefs .member .member-info {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+}
+
+.chefs .member .member-info-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  transition: bottom 0.4s;
+}
+
+.chefs .member .member-info-content h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.chefs .member .member-info-content span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+
+.chefs .member .social {
+  position: absolute;
+  left: 0;
+  bottom: -38px;
+  right: 0;
+  height: 48px;
+  transition: bottom ease-in-out 0.4s;
+  text-align: center;
+}
+
+.chefs .member .social a {
+  transition: color 0.3s;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.chefs .member .social a:hover {
+  color: #cda45e;
+}
+
+.chefs .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.chefs .member:hover .member-info {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 212, 255, 0) 100%);
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.chefs .member:hover .member-info-content {
+  bottom: 60px;
+  transition: bottom 0.4s;
+}
+
+.chefs .member:hover .social {
+  bottom: 0;
+  transition: bottom ease-in-out 0.4s;
+}
+
+.member img {
+  width: 100%;
+  height: 380px;
+}
+ 
+.rw {
+  justify-content: space-between;
+  display: flex;
 }

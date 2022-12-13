@@ -21,12 +21,12 @@ const ContactSection = () => {
                 >
                   Contact Us
                 </span>
-                <h2
+                <h1
                   class="mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
                   style={{ color: "hsla(184, 23%, 37%, 0.859)" }}
                 >
                   GET IN TOUCH WITH US
-                </h2>
+                </h1>
                 <p class="text-body-color mb-9 text-base leading-relaxed">
                   Rate my professors is the largest database of professors and
                   universities in the world. Drop us your details for any
@@ -108,30 +108,31 @@ const ContactSection = () => {
               <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
                 <form>
                   <div class="mb-6">
+                    
                     <input
                       type="text"
-                      placeholder="Your Name"
+                      placeholder="Your Name" aria-label="text"
                       class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
                   <div class="mb-6">
                     <input
                       type="email"
-                      placeholder="Your Email"
+                      placeholder="Your Email" aria-label="text"
                       class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
                   <div class="mb-6">
                     <input
                       type="text"
-                      placeholder="Your Phone"
+                      placeholder="Your Phone" aria-label="text"
                       class="text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
                   <div class="mb-6">
                     <textarea
                       rows="6"
-                      placeholder="Your Message"
+                      placeholder="Your Message" aria-label="text"
                       class="text-body-color border-[f0f0f0] focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     ></textarea>
                   </div>

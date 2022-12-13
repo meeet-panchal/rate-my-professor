@@ -4,6 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { H1 } from "../../styleComponents.js";
 import Container from "react-bootstrap/Container";
+import "./index.css"; 
 
 const DonationButton = ({ amount }) => {
 
@@ -76,15 +77,15 @@ const Donation = props => {
           <Toaster />
           <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
 
-            <p>
+            <p className='text-center'>
               Our website in 100% free to use and we don't show ads.
               We are bunch of developers who wants to contribute back to the community we came from,
               a small donation will give us a sense of appritiation.
             </p>
             <div className='text-center'>
-              <Text>Enter your amount</Text>{" "}{" "}{" "}{" "}
+              <Text>Enter your amount</Text>
 
-              <input type={''} value={donationAmount} onInput={donationAmountChangeHandler} />
+              <input type={''} value={donationAmount} onInput={donationAmountChangeHandler} className="donationamount" />
             </div>
             <Divider orientation="center">or choose this amount</Divider>
             <div className="d-flex justify-content-center">

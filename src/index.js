@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/font-awesome.min.css";
+// import "font-awesome/css/font-awesome.min.css";
 
 <link
   rel="stylesheet"
@@ -13,7 +13,7 @@ import "font-awesome/css/font-awesome.min.css";
   integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
   crossorigin="anonymous"
 />;
-
+<link rel="canonical" href="https://ratemyprofessor.com/" />
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
 
