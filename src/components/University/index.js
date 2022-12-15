@@ -111,39 +111,39 @@ const University = () => {
             ></Card>
             <Descriptions size="small" className="descriptions-header">
               <Descriptions.Item label="Reputation">
-                {universityDetails?.reputation} / 5
+                {parseFloat(universityDetails?.reputation).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Opportunities">
-                {universityDetails?.opportunities} / 5
+                {parseFloat(universityDetails?.opportunities).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Facilities">
-                {universityDetails?.facilities} / 5
+                {parseFloat(universityDetails?.facilities).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Internet">
-                {universityDetails?.internet} / 5
+                {parseFloat(universityDetails?.internet).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Food">
-                {universityDetails?.food} / 5
+                {parseFloat(universityDetails?.food).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Club">
-                {universityDetails?.club} / 5
+                {parseFloat(universityDetails?.club).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Social">
-                {universityDetails?.social} / 5
+                {parseFloat(universityDetails?.social).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Happiness">
-                {universityDetails?.happiness} / 5
+                {parseFloat(universityDetails?.happiness).toFixed(1)} / 5
               </Descriptions.Item>
 
               <Descriptions.Item label="Safety">
-                {universityDetails?.safety} / 5
+                {parseFloat(universityDetails?.safety).toFixed(1)} / 5
               </Descriptions.Item>
             </Descriptions>
           </Col>
@@ -156,8 +156,7 @@ const University = () => {
               overallRating,
               ratingGivenOn,
               ratingGivenBy,
-              facilities,
-              _id,
+              _id
             } = data;
 
             return (
@@ -216,39 +215,39 @@ const University = () => {
                 >
                   <Descriptions size="small">
                     <Descriptions.Item label="Reputation">
-                      {universityDetails?.reputation} / 5
+                      {parseFloat(data?.reputation).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Opportunities">
-                      {universityDetails?.opportunities} / 5
+                      {parseFloat(data?.opportunities).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Facilities">
-                      {universityDetails?.facilities} / 5
+                      {parseFloat(data?.facilities).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Internet">
-                      {universityDetails?.internet} / 5
+                      {parseFloat(data?.internet).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Food">
-                      {universityDetails?.food} / 5
+                      {parseFloat(data?.food).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Club">
-                      {universityDetails?.club} / 5
+                      {parseFloat(data?.club).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Social">
-                      {universityDetails?.social} / 5
+                      {parseFloat(data?.social).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Happiness">
-                      {universityDetails?.happiness} / 5
+                      {parseFloat(data?.happiness).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item label="Safety">
-                      {universityDetails?.safety} / 5
+                      {parseFloat(data?.safety).toFixed(1)} / 5
                     </Descriptions.Item>
 
                     <Descriptions.Item

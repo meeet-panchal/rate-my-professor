@@ -38,7 +38,7 @@ const UniversityInformation = ({ data }) => {
               >
                 <Statistic
                   title="Overall Rating"
-                  value={overallRating}
+                  value={parseFloat(overallRating).toFixed(1)}
                   suffix=" / 5"
                 />
               </Card>
@@ -64,10 +64,10 @@ const UniversityInformation = ({ data }) => {
                     {location}
                   </Descriptions.Item>
                   <Descriptions.Item label="Reputation">
-                    {reputation} / 5
+                    {parseFloat(reputation).toFixed(1)} / 5
                   </Descriptions.Item>
                   <Descriptions.Item label="Facilities">
-                    {facilities} / 5
+                    {parseFloat(facilities).toFixed(1)} / 5
                   </Descriptions.Item>
                 </Descriptions>
               </Row>
