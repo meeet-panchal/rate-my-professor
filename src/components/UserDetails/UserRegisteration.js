@@ -96,7 +96,7 @@ const RegisterationForm = () => {
     <>
       <div className="App">
         <Toaster />
-        <Container>
+        <Container className="my-5">
           <Form
             {...formItemLayout}
             form={form}
