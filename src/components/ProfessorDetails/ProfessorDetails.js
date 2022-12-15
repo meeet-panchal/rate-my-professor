@@ -182,29 +182,31 @@ const Professor = () => {
                 <div className="d-flex justify-content-end edit-delete">
                   {userId === _id && (
                     <Link
-                      style={{ textDecoration: "none" }}
+                    className="mx-2"
+                      style={{ textDecoration: "none", borderRadius:"5px", backgroundColor :"#003b49"}}
                       to={`/editRating/${data?._id}`}
                     >
                       <i
                         class="fa fa-edit fa-lg mx-2"
                         style={{
-                          color: " rgb(0, 59, 73)",
-                          fontSize: "30px",
+                          color: "#ffffff",
+                          fontSize: "15px",
                           fontWeight: 600,
                         }}
-                      ></i>
+                      >Edit</i>
                     </Link>
                   )}
                   {userId === _id && (
-                    <Link onClick={() => deleteRating(data?._id)}>
+                    <Link style={{ textDecoration: "none", borderRadius:"5px", backgroundColor :"#e41e1e"}}
+                     onClick={() => deleteRating(data?._id)}>
                       <i
                         class="fa fa-trash fa-lg mx-2"
                         style={{
-                          color: "#e41e1e",
-                          fontSize: "30px",
+                          color: "#ffffff",
+                          fontSize: "15px",
                           fontWeight: 600,
                         }}
-                      ></i>
+                      >Delete</i>
                     </Link>
                   )}
                 </div>
