@@ -2,8 +2,9 @@ import Container from "react-bootstrap/Container";
 import { H1 } from "../../styleComponents.js";
 import { Button, Form, Input, Rate } from "antd";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 import "./universities.css";
 
 const { TextArea } = Input;
@@ -29,6 +30,8 @@ const formItemLayout = {
 
 const Universities = () => {
   let { id } = useParams();
+  const navigate = useNavigate();
+
 
   const [universityDetails, setUniversityDetails] = useState();
 
@@ -39,11 +42,24 @@ const Universities = () => {
   }, []);
 
   const onFinish = (values) => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const ratingsFeedback = { ...values, ratingGivenFor: id };
+
+
+    axios.post(`http://localhost:3600/saveUniversityRating`,ratingsFeedback, {
+      headers: { Authorization: `Bearer ${token}` },
+    }).then(data=>{
+      toast.success("Feedback has been submitted!");
+      setTimeout(() => {
+        navigate(`/university/${id}`);
+      }, 1000);
+    })
     console.log("Received values of form: ", values);
   };
 
   return (
     <div className="App">
+      <Toaster />
       {/*       <Carousel autoplay>
         <div>
           <h3 style={contentStyle} className="uni1"></h3>

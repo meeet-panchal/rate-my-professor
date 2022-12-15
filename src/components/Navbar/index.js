@@ -1,5 +1,5 @@
-import { Link, useLocation,useNavigate } from 'react-router-dom'
-import { useState, useEffect,useRef } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
 import { BiMenu, BiWindowClose } from "react-icons/bi";
 
 
@@ -11,28 +11,30 @@ const NavigationBar = () => {
     const navigate = useNavigate()
     let nav = useRef()
 
-  useEffect(() => {
-    const authToken = localStorage.getItem("token");
-    const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
+    useEffect(() => {
+        const authToken = localStorage.getItem("token");
+        const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
 
-    if (authToken !== null) {
-      setLoggedInStatus(true);
-      setUserData(userInfo);
-    } else {
-      setLoggedInStatus(false);
-      setUserData({});
+        if (authToken !== null) {
+            setLoggedInStatus(true);
+            setUserData(userInfo);
+        } else {
+            setLoggedInStatus(false);
+            setUserData({});
+        }
+    }, [location]);
+
+    const logoutUser = () => {
+        localStorage.clear()
+        navigate("/")
     }
-  }, [location]);
 
-  const logoutUser = ()=>{
-    localStorage.clear()
-    navigate("/")
-  }
 
- 
 
-    const showmenu = (e) => {nav.current.style.right = "0px"  
-    console.log(e.target)}
+    const showmenu = (e) => {
+        nav.current.style.right = "0px"
+        console.log(e.target)
+    }
 
     const hidemenu = (e) => {
         nav.current.style.right = "-200px"
@@ -41,19 +43,19 @@ const NavigationBar = () => {
 
 
     return (
-      <section>
-     <nav>
-            <div className="logo">
-                <Link to="/">
+        <section>
+            <nav>
+                <div className="logo">
+                    <Link to="/">
 
-                    <span id="part1">Rate My</span>
-                    <span id="part2"> Professor</span>
+                        <span id="part1">Rate My</span>
+                        <span id="part2"> Professor</span>
 
-                </Link>
-            </div>
-          
+                    </Link>
+                </div>
+
                 <div className="navigation" id="navigation" ref={nav}>
-                <BiWindowClose onClick={hidemenu} className=""/>
+                    <BiWindowClose onClick={hidemenu} className="" />
                     <ul>
                         {loggedInStatus && userData?.isStudent && (
                             <>
@@ -75,9 +77,10 @@ const NavigationBar = () => {
                         {loggedInStatus && <li style={{ color: "#fff" }}>
                             Hey {userData?.firstName} {userData.lastName}
                         </li>}
-                        {loggedInStatus ? (<li>
-                            <Link to="/logout">LOGOUT</Link>
-                        </li>) : (<li>
+                        {loggedInStatus ? (
+                            <li style={{ color: "#fff" }} onClick={logoutUser}>
+                                LOGOUT
+                            </li>) : (<li>
                             <Link to="/login">LOGIN</Link>
                         </li>)}
                         {!loggedInStatus && (<li>
@@ -85,12 +88,12 @@ const NavigationBar = () => {
                         </li>)}
                     </ul>
                 </div>
-           <div className='togglebtn'>
-            <BiMenu onClick={showmenu}/>
-            </div>
+                <div className='togglebtn'>
+                    <BiMenu onClick={showmenu} />
+                </div>
             </nav>
-            </section>
-           
+        </section>
+
     )
 }
 

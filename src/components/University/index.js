@@ -10,7 +10,7 @@ import { Progress } from "antd";
 import { Button, Descriptions, PageHeader, Statistic } from "antd";
 import DescriptionsItem from "antd/lib/descriptions/Item";
 import { Divider } from "antd";
-import "../University/University.css";
+import "./University.css";
 import "../ProfessorDetails/ProfessorDetails.css";
 
 import { Collapse } from "antd";

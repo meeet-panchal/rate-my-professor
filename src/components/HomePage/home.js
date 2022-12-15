@@ -48,7 +48,7 @@ const Home = () => {
                 <div className="member-info">
                   <div className="member-info-content">
                     <h4>Meet Panchal</h4>
-                    <span>REACT Developer</span>
+                    <span>Fullstack Developer</span>
                   </div>
                 </div>
               </div>
