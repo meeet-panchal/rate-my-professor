@@ -21,7 +21,7 @@ const ProfessorInformation = ({ data }) => {
   } = data;
   return (
     <Link to={`/professor/${_id}`}>
-      <section class="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
+      <section class="relative z-10 overflow-hidden bg-white py-4">
         <Container>
           <Row className="text-center">
             <Col

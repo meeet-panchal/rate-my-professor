@@ -1,16 +1,16 @@
 import React from "react";
-
+import "./newcontact.css";
 const AboutSection = () => {
   return (
     <>
       <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
         <p
           class=" mb-4 block text-3xl font-bold text-center"
-          style={{ color: "hsla(184, 23%, 37%, 0.859)" }}
+          style={{ color: "#003b49" }}
         >
           About
         </p>
-        <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
+        <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12 remove-flex-sm">
           <div className="w-full lg:w-6/12">
             <h2
               className="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9"
@@ -55,7 +55,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="flex lg:flex-row flex-col md:gap-14 gap-16 justify-between lg:mt-20 mt-16">
+        <div className="flex lg:flex-row flex-col md:gap-14 gap-16 justify-between lg:mt-20 mt-16 remove-flex-sm">
           <div className="w-full lg:w-6/12">
             <h2 className="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">
               Our Mission
